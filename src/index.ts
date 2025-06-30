@@ -41,9 +41,13 @@ export default <Plugin<Array<RemarkMDCOptions>>> function remarkMDC(opts: Remark
   if (opts.autoUnwrap === undefined && opts.experimental?.autoUnwrap) {
     opts.autoUnwrap = opts.experimental.autoUnwrap ? { safeTypes: [] } : false
   }
-  if (opts.yamlCodeBlockProps === undefined && opts.experimental?.componentCodeBlockYamlProps) {
-    opts.yamlCodeBlockProps = opts.experimental.componentCodeBlockYamlProps
-  }
+
+  opts.attributes ||= {}
+  opts.attributes.maxLength = opts.attributes.maxLength ?? opts.maxAttributesLength ?? 80
+  opts.attributes.yamlCodeBlock = opts.attributes.yamlCodeBlock
+    ?? opts.yamlCodeBlockProps
+    ?? opts.experimental?.componentCodeBlockYamlProps
+    ?? false
 
   add('micromarkExtensions', syntax())
   add('fromMarkdownExtensions', fromMarkdown(opts))
@@ -62,7 +66,7 @@ export default <Plugin<Array<RemarkMDCOptions>>> function remarkMDC(opts: Remark
     return async (tree: ComponentNode, { data }: { data: Record<string, any> }) => {
       const jobs: Promise<unknown>[] = []
       visit<ComponentNode, string[]>(tree, ['textComponent', 'leafComponent', 'containerComponent'], (node) => {
-        bindNode(node)
+        bindNode(node, opts['frontmatter'])
         const { instance: handler, options } = opts.components!.find(c => c.name === node.name) || {}
         if (handler) {
           jobs.push(handler(options)(node, data))
@@ -76,15 +80,15 @@ export default <Plugin<Array<RemarkMDCOptions>>> function remarkMDC(opts: Remark
 
   return (tree: ComponentNode) => {
     visit<ComponentNode, string[]>(tree, ['textComponent', 'leafComponent', 'containerComponent'], (node) => {
-      bindNode(node)
+      bindNode(node, opts['frontmatter'])
     })
   }
 }
 
-function bindNode(node: ComponentNode) {
+function bindNode(node: ComponentNode, options: RemarkMDCOptions['frontmatter']) {
   const nodeData = node.data || (node.data = {})
 
-  node.fmAttributes = getNodeData(node)
+  node.fmAttributes = getNodeData(node, options)
 
   nodeData.hName = kebabCase(node.name!)
   nodeData.hProperties = bindData(
@@ -96,10 +100,10 @@ function bindNode(node: ComponentNode) {
   )
 }
 
-function getNodeData(node: ComponentNode) {
+function getNodeData(node: ComponentNode, options?: RemarkMDCOptions['frontmatter']) {
   if (node.rawData) {
     const yaml = node.rawData.replace(/\s-+$/, '')
-    const { data } = parseFrontMatter(toFrontMatter(yaml))
+    const { data } = parseFrontMatter(toFrontMatter(yaml), options)
     return data
   }
 

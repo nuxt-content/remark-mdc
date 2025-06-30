@@ -1634,6 +1634,192 @@ exports[`Attributes > nested3 1`] = `
 }
 `;
 
+exports[`Attributes > preserveOrder 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "__order__": {
+              "type": "map",
+              "value": [
+                [
+                  "a",
+                  "a",
+                ],
+                [
+                  "c",
+                  "c",
+                ],
+                [
+                  "b",
+                  "b",
+                ],
+              ],
+            },
+            "a": "a",
+            "b": "b",
+            "c": "c",
+          },
+          "children": [],
+          "data": {
+            "hName": "test",
+            "hProperties": {
+              ":__order__": "{"type":"map","value":[["a","a"],["c","c"],["b","b"]]}",
+              "a": "a",
+              "b": "b",
+              "c": "c",
+            },
+          },
+          "fmAttributes": {},
+          "name": "test",
+          "position": {
+            "end": {
+              "column": 25,
+              "line": 1,
+              "offset": 24,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "textComponent",
+        },
+        {
+          "position": {
+            "end": {
+              "column": 30,
+              "line": 1,
+              "offset": 29,
+            },
+            "start": {
+              "column": 25,
+              "line": 1,
+              "offset": 24,
+            },
+          },
+          "type": "text",
+          "value": " text",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 30,
+          "line": 1,
+          "offset": 29,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 30,
+      "line": 1,
+      "offset": 29,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`Attributes > sort-attributes 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "a": "a",
+            "b": "b",
+            "c": "c",
+          },
+          "children": [],
+          "data": {
+            "hName": "test",
+            "hProperties": {
+              "a": "a",
+              "b": "b",
+              "c": "c",
+            },
+          },
+          "fmAttributes": {},
+          "name": "test",
+          "position": {
+            "end": {
+              "column": 25,
+              "line": 1,
+              "offset": 24,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "textComponent",
+        },
+        {
+          "position": {
+            "end": {
+              "column": 30,
+              "line": 1,
+              "offset": 29,
+            },
+            "start": {
+              "column": 25,
+              "line": 1,
+              "offset": 24,
+            },
+          },
+          "type": "text",
+          "value": " text",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 30,
+          "line": 1,
+          "offset": 29,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 30,
+      "line": 1,
+      "offset": 29,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
 exports[`Attributes > strong 1`] = `
 {
   "children": [

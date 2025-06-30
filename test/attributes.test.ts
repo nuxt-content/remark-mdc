@@ -89,5 +89,18 @@ describe('Attributes', () => {
         expect(ast.children[0].fmAttributes.code).toBe('D:\\Software\\')
       },
     },
+    'sort-attributes': {
+      markdown: ':test{a="a" c="c" b="b"} text',
+      expected: ':test{a="a" b="b" c="c"} text',
+    },
+    'preserveOrder': {
+      markdown: ':test{a="a" c="c" b="b"} text',
+      expected: ':test{a="a" c="c" b="b"} text',
+      mdcOptions: {
+        attributes: {
+          preserveOrder: true,
+        },
+      },
+    },
   })
 })

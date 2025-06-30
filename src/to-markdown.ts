@@ -14,8 +14,6 @@ import type { Container } from './micromark-extension/types'
 
 type NodeContainerComponent = Parents & { name: string, fmAttributes?: Record<string, any> }
 
-const own = {}.hasOwnProperty
-
 const shortcut = /^[^\t\n\r "#'.<=>`}]+$/
 const baseFence = 2
 
@@ -78,7 +76,7 @@ export default (opts: RemarkMDCOptions = {}) => {
       }, {} as Record<string, any>)
 
     return '\n' + (
-      opts?.yamlCodeBlockProps
+      opts?.attributes?.yamlCodeBlock
         ? stringifyCodeBlockProps(attrs).trim()
         : stringifyFrontMatter(attrs).trim()
     )
@@ -145,7 +143,7 @@ export default (opts: RemarkMDCOptions = {}) => {
     node.fmAttributes = node.fmAttributes || {}
     const attributesText = attributes(node, context)
     if (
-      (value + attributesText).length > (opts?.maxAttributesLength || 80)
+      (value + attributesText).length > (opts?.attributes?.maxLength || 80)
       || Object.keys(node.fmAttributes).length > 0 // remove: allow using both yaml and inline attributes simentensoly
       || node.children?.some((child: RootContent) => child.type === 'componentContainerSection') // remove: allow using both yaml and inline attributes simentensoly
     ) {
@@ -215,22 +213,24 @@ export default (opts: RemarkMDCOptions = {}) => {
   function attributes(node: any, context: State) {
     const quote = checkQuote(context)
     const subset = (node.type as string) === 'textComponent' ? [quote] : [quote, '\n', '\r']
-    const attrs = Object.fromEntries(
-      Object.entries((node as any).attributes || {})
-        .sort(([key1], [key2]) => key1.localeCompare(key2)),
-    )
+    const attributes = (node as any).attributes || {}
+
+    const attrs = (opts.attributes?.preserveOrder && attributes.__order__)
+      ? attributes.__order__?.value
+      : Object.entries(attributes)
+          .sort(([key1], [key2]) => key1.localeCompare(key2))
 
     const values = []
     let id
     let classesFull: string | string[] = ''
     let classes: string | string[] = ''
-    let value
-    let key
     let index
 
-    for (key in attrs) {
-      if (own.call(attrs, key) && attrs[key] != null) {
-        value = String(attrs[key])
+    for (const attr of attrs) {
+      const key = attr[0]
+      let value = attr[1]
+      if (attr[1] != null) {
+        value = String(attr[1])
 
         if (key === 'id') {
           id = shortcut.test(value) ? '#' + value : quoted('id', value)

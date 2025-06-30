@@ -54,7 +54,7 @@ export default (opts: RemarkMDCOptions = {}) => {
   }
 
   const processNode = (node: Container) => {
-    if (opts.yamlCodeBlockProps) {
+    if (opts.attributes?.yamlCodeBlock) {
       applyYamlCodeBlockProps(node)
     }
     if (opts.autoUnwrap) {
@@ -305,7 +305,9 @@ export default (opts: RemarkMDCOptions = {}) => {
       }
     }
 
-    (stackTop as any).attributes = cleaned
+    (stackTop as any).attributes = opts.attributes?.preserveOrder
+      ? { __order__: { type: 'map', value: attributes }, ...cleaned }
+      : cleaned
   }
 
   function exitToken(this: CompileContext, token: Token) {

@@ -1,16 +1,34 @@
+import type { ParseOptions } from 'yaml'
+
 interface ComponentHandler {
   name: string
   instance: any
   options?: any
 }
 
+export interface YamlOptions extends ParseOptions {
+  preserveOrder?: boolean
+}
+
 export interface RemarkMDCOptions {
   components?: ComponentHandler[]
-  maxAttributesLength?: number
+  frontmatter?: YamlOptions
+  attributes?: {
+    maxLength?: number
+    preserveOrder?: boolean
+    yamlCodeBlock?: boolean
+  }
   autoUnwrap?: boolean | {
     safeTypes?: Array<string>
   }
+  /**
+   * @deprecated Use `attributes.yamlCodeBlock`
+   */
   yamlCodeBlockProps?: boolean
+  /**
+   * @deprecated Use `attributes.maxLength`
+   */
+  maxAttributesLength?: number
   experimental?: {
     /**
      * @deprecated This feature is out of experimental, use `autoUnwrap`

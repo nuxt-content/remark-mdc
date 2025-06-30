@@ -12,6 +12,10 @@ describe('span', async () => {
       markdown: '[span _span_ **span** `span`]',
       expected: '[span _span_ **span** `span`]',
     },
+    'complex': {
+      markdown: '[span _span_ **span** `span`]{a="a" b="b"}',
+      expected: '[span _span_ **span** `span`]{a="a" b="b"}',
+    },
     'inside-link-valid': {
       markdown: '[ [span]](#href)',
       extra(_markdown, ast, _expected) {

@@ -328,6 +328,203 @@ exports[`span > complex _ 1`] = `
 }
 `;
 
+exports[`span > complex 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "a": "a",
+            "b": "b",
+          },
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 7,
+                  "line": 1,
+                  "offset": 6,
+                },
+                "start": {
+                  "column": 2,
+                  "line": 1,
+                  "offset": 1,
+                },
+              },
+              "type": "text",
+              "value": "span ",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 12,
+                      "line": 1,
+                      "offset": 11,
+                    },
+                    "start": {
+                      "column": 8,
+                      "line": 1,
+                      "offset": 7,
+                    },
+                  },
+                  "type": "text",
+                  "value": "span",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 13,
+                  "line": 1,
+                  "offset": 12,
+                },
+                "start": {
+                  "column": 7,
+                  "line": 1,
+                  "offset": 6,
+                },
+              },
+              "type": "emphasis",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 14,
+                  "line": 1,
+                  "offset": 13,
+                },
+                "start": {
+                  "column": 13,
+                  "line": 1,
+                  "offset": 12,
+                },
+              },
+              "type": "text",
+              "value": " ",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 20,
+                      "line": 1,
+                      "offset": 19,
+                    },
+                    "start": {
+                      "column": 16,
+                      "line": 1,
+                      "offset": 15,
+                    },
+                  },
+                  "type": "text",
+                  "value": "span",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 22,
+                  "line": 1,
+                  "offset": 21,
+                },
+                "start": {
+                  "column": 14,
+                  "line": 1,
+                  "offset": 13,
+                },
+              },
+              "type": "strong",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 23,
+                  "line": 1,
+                  "offset": 22,
+                },
+                "start": {
+                  "column": 22,
+                  "line": 1,
+                  "offset": 21,
+                },
+              },
+              "type": "text",
+              "value": " ",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 29,
+                  "line": 1,
+                  "offset": 28,
+                },
+                "start": {
+                  "column": 23,
+                  "line": 1,
+                  "offset": 22,
+                },
+              },
+              "type": "inlineCode",
+              "value": "span",
+            },
+          ],
+          "data": {
+            "hName": "span",
+            "hProperties": {
+              "a": "a",
+              "b": "b",
+            },
+          },
+          "fmAttributes": {},
+          "name": "span",
+          "position": {
+            "end": {
+              "column": 30,
+              "line": 1,
+              "offset": 29,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "textComponent",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 43,
+          "line": 1,
+          "offset": 42,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 43,
+      "line": 1,
+      "offset": 42,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
 exports[`span > ignore-double-bracket 1`] = `
 {
   "children": [

@@ -18,9 +18,7 @@ export interface RemarkMDCOptions {
     preserveOrder?: boolean
     yamlCodeBlock?: boolean
   }
-  autoUnwrap?: boolean | {
-    safeTypes?: Array<string>
-  }
+  autoUnwrap?: boolean | {}
   /**
    * @deprecated Use `attributes.yamlCodeBlock`
    */

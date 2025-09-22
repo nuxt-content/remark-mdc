@@ -95,9 +95,6 @@ exports[`auto-unwrap > simple 1`] = `
         "hProperties": {},
       },
       "fmAttributes": {},
-      "mdc": {
-        "unwrapped": "paragraph",
-      },
       "name": "test",
       "position": {
         "end": {
@@ -161,9 +158,6 @@ exports[`auto-unwrap > slot 1`] = `
             "hProperties": {
               "v-slot:title": "",
             },
-          },
-          "mdc": {
-            "unwrapped": "paragraph",
           },
           "name": "title",
           "position": {
@@ -376,9 +370,6 @@ exports[`auto-unwrap > twoSlots 1`] = `
               "v-slot:title": "",
             },
           },
-          "mdc": {
-            "unwrapped": "paragraph",
-          },
           "name": "title",
           "position": {
             "end": {
@@ -400,9 +391,6 @@ exports[`auto-unwrap > twoSlots 1`] = `
         "hProperties": {},
       },
       "fmAttributes": {},
-      "mdc": {
-        "unwrapped": "paragraph",
-      },
       "name": "test",
       "position": {
         "end": {

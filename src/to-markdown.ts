@@ -4,12 +4,12 @@
  * License: MIT (https://github.com/syntax-tree/mdast-util-directive/blob/main/license)
  */
 import { stringifyEntitiesLight } from 'stringify-entities'
-import type { Parents, RootContent } from 'mdast'
+import type { Parents, PhrasingContent, RootContent } from 'mdast'
 import { type State, type Info, type Unsafe, defaultHandlers } from 'mdast-util-to-markdown'
 import { containerFlow, containerPhrasing, checkQuote, inlineContainerFlow } from './mdast-util-to-markdown'
 import { stringifyFrontMatter, stringifyCodeBlockProps } from './frontmatter'
 import type { RemarkMDCOptions } from './types'
-import { convertHtmlEntitiesToChars, NON_UNWRAPPABLE_TYPES } from './utils'
+import { CONTAINER_NODE_TYPES, convertHtmlEntitiesToChars, NON_UNWRAPPABLE_TYPES } from './utils'
 import type { Container } from './micromark-extension/types'
 
 type NodeContainerComponent = Parents & { name: string, fmAttributes?: Record<string, any> }
@@ -37,17 +37,24 @@ function compilePattern(pattern: Unsafe) {
 type NodeComponentContainerSection = Parents & { name: string }
 
 export default (opts: RemarkMDCOptions = {}) => {
-  const applyAutomaticUnwrap = (node: Container, { safeTypes = [] }: Exclude<RemarkMDCOptions['autoUnwrap'], boolean | undefined>) => {
-    const isSafe = (type: string) => NON_UNWRAPPABLE_TYPES.has(type) || safeTypes.includes(type)
-    if (!node.mdc?.unwrapped) {
+  const applyAutomaticUnwrap = (node: Container, _options: Exclude<RemarkMDCOptions['autoUnwrap'], boolean | undefined>) => {
+    if (!CONTAINER_NODE_TYPES.has(node.type)) {
+      // unwrap only applicable for container components
       return
     }
+
+    const isSafe = (type: string) => ['paragraph'].includes(type) || NON_UNWRAPPABLE_TYPES.has(type)
+    const safeChildrens = node.children.filter(child => !isSafe(child.type))
+    if (safeChildrens.length === 0) {
+      return
+    }
+
     node.children = [
       {
-        type: node.mdc.unwrapped as any,
-        children: node.children.filter((child: RootContent) => !isSafe(child.type)),
+        type: 'paragraph',
+        children: safeChildrens as PhrasingContent[],
       },
-      ...node.children.filter((child: RootContent) => isSafe(child.type)),
+      ...node.children.filter(child => isSafe(child.type)),
     ]
   }
 

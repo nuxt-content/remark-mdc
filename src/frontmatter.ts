@@ -30,9 +30,9 @@ export function stringifyYAML(data: any, options?: YamlOptions & { prefix?: stri
 
 export function stringifyFrontMatter(data: any, content = '', options?: YamlOptions) {
   const str = stringifyYAML(data, {
-    ...options,
     prefix: FRONTMATTER_DELIMITER_DEFAULT,
     suffix: FRONTMATTER_DELIMITER_DEFAULT,
+    ...options,
   })
 
   return [str, '', content.trim()].join('\n').trim() + '\n'
@@ -40,9 +40,9 @@ export function stringifyFrontMatter(data: any, content = '', options?: YamlOpti
 
 export function stringifyCodeBlockProps(data: any, content = '', options?: YamlOptions) {
   const str = stringifyYAML(data, {
-    ...options,
     prefix: FRONTMATTER_DELIMITER_CODEBLOCK_STYLE,
     suffix: '```',
+    ...options,
   })
 
   return [str, content.trim()].join('\n').trim() + '\n'

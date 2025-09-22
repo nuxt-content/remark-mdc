@@ -43,7 +43,7 @@ function track(options_: any) {
    */
   function move(value = '') {
     const chunks = value.split(/\r?\n|\r/g)
-    const tail = chunks[chunks.length - 1]
+    const tail = chunks[chunks.length - 1]!
     line += chunks.length - 1
     column
       = chunks.length === 1 ? column + tail.length : 1 + tail.length + lineShift
@@ -208,7 +208,7 @@ export function containerPhrasing(parent: any, context: any, safeOptions: any) {
       && (before === '\r' || before === '\n')
       && child.type === 'html'
     ) {
-      results[results.length - 1] = results[results.length - 1].replace(
+      results[results.length - 1] = results[results.length - 1]!.replace(
         /(\r?\n|\r)$/,
         ' ',
       )
@@ -229,7 +229,7 @@ export function containerPhrasing(parent: any, context: any, safeOptions: any) {
       ),
     )
 
-    before = results[results.length - 1].slice(-1)
+    before = results[results.length - 1]!.slice(-1)
   }
 
   indexStack.pop()

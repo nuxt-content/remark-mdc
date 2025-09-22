@@ -10,7 +10,7 @@ const attributes: any = { tokenize: tokenizeAttributes, partial: true }
 
 function previous(this: TokenizeContext, code: Code) {
   // If there is a previous code, there will always be a tail.
-  return code !== Codes.colon /* `:` */ || this.events[this.events.length - 1][1].type === 'characterEscape'
+  return code !== Codes.colon /* `:` */ || this.events[this.events.length - 1]?.[1]?.type === 'characterEscape'
 }
 
 function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State) {

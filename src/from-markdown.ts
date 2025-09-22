@@ -17,9 +17,9 @@ export default (opts: RemarkMDCOptions = {}) => {
     if (
       firstSection
       && firstSection.children?.length
-      && firstSection.children[0].type === 'code'
-      && firstSection.children[0].lang === 'yaml'
-      && firstSection.children[0].meta === '[props]'
+      && firstSection.children[0]?.type === 'code'
+      && firstSection.children[0]?.lang === 'yaml'
+      && firstSection.children[0]?.meta === '[props]'
     ) {
       node.rawData = firstSection.children[0].value as string
       node.mdc = node.mdc || {}
@@ -297,9 +297,9 @@ export default (opts: RemarkMDCOptions = {}) => {
 
     let stackTop = this.stack[this.stack.length - 1]
 
-    if (stackTop.type !== 'textComponent' || stackTop.name === 'span') {
-      while (!stackTop.position?.end && (stackTop as Container).children?.length > 0) {
-        stackTop = (stackTop as Container).children[(stackTop as Container).children.length - 1]
+    if (stackTop?.type !== 'textComponent' || stackTop?.name === 'span') {
+      while (!stackTop?.position?.end && (stackTop as Container).children?.length > 0) {
+        stackTop = (stackTop as Container).children[(stackTop as Container).children.length - 1]!
       }
     }
 
@@ -315,7 +315,7 @@ export default (opts: RemarkMDCOptions = {}) => {
   function conditionalExit(this: CompileContext, token: Token) {
   // As of mdast-util-from-markdown@1.1.0 tokenStack items is an array containing the token and a handler
   // https://github.com/syntax-tree/mdast-util-from-markdown/blob/752dc22acfc517d280612e8d499d5ce0cd5a4495/dev/lib/index.js#L548
-    const [section] = this.tokenStack[this.tokenStack.length - 1]
+    const [section] = this.tokenStack[this.tokenStack.length - 1]!
     if ((section as Token).type === token.type) {
       this.exit(token)
     }
@@ -329,7 +329,7 @@ export default (opts: RemarkMDCOptions = {}) => {
     while (section.type === 'listItem' || section.type === 'list') {
       // As of mdast-util-from-markdown@1.1.0 tokenStack items is an array containing the token and a handler
       // https://github.com/syntax-tree/mdast-util-from-markdown/blob/752dc22acfc517d280612e8d499d5ce0cd5a4495/dev/lib/index.js#L548
-      const [stackToken] = this.tokenStack[this.tokenStack.length - 1]
+      const [stackToken] = this.tokenStack[this.tokenStack.length - 1]!
       this.exit(stackToken)
       section = this.stack[this.stack.length - 1] as Nodes
     }

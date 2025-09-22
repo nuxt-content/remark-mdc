@@ -15,14 +15,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
+    "prepack": "unbuild",
     "dev": "nuxi dev playground",
     "dev:prepare": "nuxi prepare playground",
     "generate": "nuxi generate playground",
     "lint": "eslint",
     "test:ui": "pnpm lint && vitest --ui --open=false",
     "test": "vitest run",
-    "prepack": "pnpm build",
     "release": "release-it",
     "typecheck": "nuxt typecheck",
     "verify": "npm run dev:prepare && npm run lint && npm run test && npm run typecheck"
@@ -45,27 +44,27 @@
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0",
     "unist-util-visit-parents": "^6.0.1",
-    "yaml": "^2.8.0"
+    "yaml": "^2.8.1"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^1.4.1",
-    "@nuxt/kit": "^3.17.5",
-    "@nuxt/ui": "3.2.0",
+    "@nuxt/eslint-config": "^1.9.0",
+    "@nuxt/kit": "^4.1.2",
+    "@nuxt/ui": "3.3.4",
     "@nuxthub/core": "^0.9.0",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@types/flat": "^5.0.5",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^24.0.7",
-    "eslint": "^9.30.0",
+    "@types/node": "^24.5.2",
+    "eslint": "^9.36.0",
     "eslint-plugin-nuxt": "latest",
-    "jiti": "^2.4.2",
-    "nuxt": "^3.17.5",
-    "release-it": "^19.0.3",
+    "jiti": "^2.6.0",
+    "nuxt": "^4.1.2",
+    "release-it": "^19.0.5",
     "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "remark-wiki-link": "^2.0.1",
-    "unbuild": "^3.5.0",
+    "unbuild": "^3.6.1",
     "vitest": "latest"
   },
   "release-it": {
@@ -80,5 +79,5 @@
       "after:bump": "npx changelogen@latest --no-commit --no-tag --output --r $(node -p \"require('./package.json').version\")"
     }
   },
-  "packageManager": "pnpm@10.12.4"
+  "packageManager": "pnpm@10.17.0"
 }

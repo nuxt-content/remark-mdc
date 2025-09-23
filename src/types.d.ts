@@ -7,6 +7,8 @@ interface ComponentHandler {
 }
 
 export interface YamlOptions extends ParseOptions {
+  prefix?: string
+  suffix?: string
   preserveOrder?: boolean
 }
 

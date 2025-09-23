@@ -13,6 +13,7 @@ export const NON_UNWRAPPABLE_TYPES = new Set([
   'pre',
   'code',
   'textComponent',
+  'heading',
 ])
 
 export function convertHtmlEntitiesToChars(text: string): string {

@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.7.0
+
+[compare changes](https://github.com/nuxtlabs/remark-mdc/compare/v3.6.0...v3.7.0)
+
+### 🚀 Enhancements
+
+- Preserve orders ([b0f59c5](https://github.com/nuxtlabs/remark-mdc/commit/b0f59c5))
+
+### 🩹 Fixes
+
+- **auto-unwrap:** Improve stringify login and support paragraphs only ([#107](https://github.com/nuxtlabs/remark-mdc/pull/107))
+- Override front matter prefix/suffix ([be75677](https://github.com/nuxtlabs/remark-mdc/commit/be75677))
+- Do not unwrap heading ([024adeb](https://github.com/nuxtlabs/remark-mdc/commit/024adeb))
+
+### 📖 Documentation
+
+- Correctly close block components on "Slots" example ([#95](https://github.com/nuxtlabs/remark-mdc/pull/95))
+
+### 🌊 Types
+
+- Export plugin options type ([1cda4d8](https://github.com/nuxtlabs/remark-mdc/commit/1cda4d8))
+
+### 🏡 Chore
+
+- Upgrade deps ([8558577](https://github.com/nuxtlabs/remark-mdc/commit/8558577))
+
+### ✅ Tests
+
+- Add extra test ([11fd52e](https://github.com/nuxtlabs/remark-mdc/commit/11fd52e))
+
+### 🤖 CI
+
+- Upgrade actions ([8458ef7](https://github.com/nuxtlabs/remark-mdc/commit/8458ef7))
+
+### ❤️ Contributors
+
+- Farnabaz <farnabaz@gmail.com>
+- Snack ([@Snack-X](https://github.com/Snack-X))
+
 ## v3.6.0
 
 [compare changes](https://github.com/nuxtlabs/remark-mdc/compare/v3.5.3...v3.6.0)

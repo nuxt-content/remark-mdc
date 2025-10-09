@@ -19,7 +19,7 @@ export function useMarkdownParser(input: Ref<string>, mdcOptions = ref({})) {
       const unified = await import('unified').then(r => r.unified)
       const parse = await import('remark-parse').then(r => r.default)
       const gfm = await import('remark-gfm').then(r => r.default)
-      const mdc = await import('../../src').then(r => r.default)
+      const mdc = await import('../../../src').then(r => r.default)
 
       _stream = unified()
         .use(parse)

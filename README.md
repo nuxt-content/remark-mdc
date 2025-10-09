@@ -6,7 +6,7 @@
 
 Remark plugin to parse Markdown Components syntax.
 
-For MDC syntax highlight on VS Code, checkout [vscode-mdc](https://github.com/nuxtlabs/vscode-mdc).
+For MDC syntax highlight on VS Code, checkout [vscode-mdc](https://github.com/nuxt-content/vscode-mdc).
 
 ## Setup
 
@@ -245,7 +245,7 @@ color: blue
 
 You can contribute to this module online with CodeSandbox:
 
-[![Edit remark-mdc](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/nuxtlabs/remark-mdc/tree/main/?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit remark-mdc](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/nuxt-content/remark-mdc/tree/main/?fontsize=14&hidenavigation=1&theme=dark)
 
 Or locally:
 
@@ -255,9 +255,7 @@ Or locally:
 
 ## License
 
-[MIT License](https://github.com/nuxtlabs/remark-mdc/blob/main/LICENSE)
-
-Copyright (c) NuxtLabs
+[MIT License](https://github.com/nuxt-content/remark-mdc/blob/main/LICENSE)
 
 
 <!-- Badges -->
@@ -267,5 +265,5 @@ Copyright (c) NuxtLabs
 [npm-downloads-src]: https://img.shields.io/npm/dm/remark-mdc.svg?style=flat&colorA=020420&colorB=28CF8D
 [npm-downloads-href]: https://npmjs.com/package/remark-mdc
 
-[license-src]: https://img.shields.io/github/license/nuxtlabs/remark-mdc.svg?style=flat&colorA=020420&colorB=28CF8D
-[license-href]: https://github.com/nuxtlabs/remark-mdc/blob/main/LICENSE
+[license-src]: https://img.shields.io/github/license/nuxt-content/remark-mdc.svg?style=flat&colorA=020420&colorB=28CF8D
+[license-href]: https://github.com/nuxt-content/remark-mdc/blob/main/LICENSE

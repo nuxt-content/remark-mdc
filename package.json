@@ -6,7 +6,7 @@
     "remark",
     "mdc"
   ],
-  "repository": "https://github.com/nuxtlabs/remark-mdc",
+  "repository": "https://github.com/nuxt-content/remark-mdc",
   "license": "MIT",
   "exports": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

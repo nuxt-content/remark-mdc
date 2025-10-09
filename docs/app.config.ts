@@ -6,7 +6,7 @@ export default defineAppConfig({
 
     socials: {
       twitter: 'nuxt_js',
-      github: 'nuxtlabs/remark-mdc',
+      github: 'nuxt-content/remark-mdc',
       nuxt: {
         label: 'Nuxt',
         icon: 'simple-icons:nuxtdotjs',
@@ -18,7 +18,7 @@ export default defineAppConfig({
       dir: 'docs/content',
       branch: 'main',
       repo: 'remark-mdc',
-      owner: 'nuxtlabs',
+      owner: 'nuxt-content',
       edit: true,
     },
 

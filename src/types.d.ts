@@ -1,4 +1,4 @@
-import type { ParseOptions } from 'yaml'
+import type { ParseOptions, ToStringOptions } from 'yaml'
 
 interface ComponentHandler {
   name: string
@@ -6,15 +6,27 @@ interface ComponentHandler {
   options?: any
 }
 
+/**
+ * @deprecated Use `YamlParseOptions` instead
+ */
 export interface YamlOptions extends ParseOptions {
+  preserveOrder?: boolean
+}
+
+export interface YamlParseOptions extends ParseOptions {
+  preserveOrder?: boolean
+}
+
+export interface YamlToStringOptions extends ToStringOptions {
   prefix?: string
   suffix?: string
   preserveOrder?: boolean
 }
 
+
 export interface RemarkMDCOptions {
   components?: ComponentHandler[]
-  frontmatter?: YamlOptions
+  frontmatter?: YamlParseOptions
   attributes?: {
     maxLength?: number
     preserveOrder?: boolean

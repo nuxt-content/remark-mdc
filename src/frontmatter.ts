@@ -1,14 +1,14 @@
 import { Pair, stringify, type Node as YAMLNode } from 'yaml'
 import * as flat from 'flat'
 import { parseDocument, Document, YAMLMap, YAMLSeq, Scalar, isMap, isSeq, isScalar } from 'yaml'
-import type { YamlOptions } from './types'
+import type { YamlParseOptions, YamlToStringOptions } from './types'
 
 const FRONTMATTER_DELIMITER_DEFAULT = '---'
 const FRONTMATTER_DELIMITER_CODEBLOCK_STYLE = '```yaml [props]'
 const LF = '\n'
 const CR = '\r'
 
-export function stringifyYAML(data: any, options?: YamlOptions & { prefix?: string, suffix?: string }) {
+export function stringifyYAML(data: any, options?: YamlToStringOptions) {
   if (!data || !Object.keys(data).length) return ''
 
   if (options?.preserveOrder && data.__order__) {
@@ -23,12 +23,12 @@ export function stringifyYAML(data: any, options?: YamlOptions & { prefix?: stri
 
   return [
     options?.prefix || '',
-    stringify(data).trim(),
+    stringify(data, options).trim(),
     options?.suffix || '',
   ].join('\n').trim()
 }
 
-export function stringifyFrontMatter(data: any, content = '', options?: YamlOptions) {
+export function stringifyFrontMatter(data: any, content = '', options?: YamlParseOptions) {
   const str = stringifyYAML(data, {
     prefix: FRONTMATTER_DELIMITER_DEFAULT,
     suffix: FRONTMATTER_DELIMITER_DEFAULT,
@@ -38,7 +38,7 @@ export function stringifyFrontMatter(data: any, content = '', options?: YamlOpti
   return [str, '', content.trim()].join('\n').trim() + '\n'
 }
 
-export function stringifyCodeBlockProps(data: any, content = '', options?: YamlOptions) {
+export function stringifyCodeBlockProps(data: any, content = '', options?: YamlParseOptions) {
   const str = stringifyYAML(data, {
     prefix: FRONTMATTER_DELIMITER_CODEBLOCK_STYLE,
     suffix: '```',
@@ -48,7 +48,7 @@ export function stringifyCodeBlockProps(data: any, content = '', options?: YamlO
   return [str, content.trim()].join('\n').trim() + '\n'
 }
 
-export function parseFrontMatter(content: string, options?: YamlOptions) {
+export function parseFrontMatter(content: string, options?: YamlParseOptions) {
   let data: any = {}
   if (content.startsWith(FRONTMATTER_DELIMITER_DEFAULT)) {
     const idx = content.indexOf(LF + FRONTMATTER_DELIMITER_DEFAULT)

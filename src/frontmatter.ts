@@ -28,7 +28,7 @@ export function stringifyYAML(data: any, options?: YamlToStringOptions) {
   ].join('\n').trim()
 }
 
-export function stringifyFrontMatter(data: any, content = '', options?: YamlParseOptions) {
+export function stringifyFrontMatter(data: any, content = '', options?: YamlToStringOptions) {
   const str = stringifyYAML(data, {
     prefix: FRONTMATTER_DELIMITER_DEFAULT,
     suffix: FRONTMATTER_DELIMITER_DEFAULT,
@@ -38,7 +38,7 @@ export function stringifyFrontMatter(data: any, content = '', options?: YamlPars
   return [str, '', content.trim()].join('\n').trim() + '\n'
 }
 
-export function stringifyCodeBlockProps(data: any, content = '', options?: YamlParseOptions) {
+export function stringifyCodeBlockProps(data: any, content = '', options?: YamlToStringOptions) {
   const str = stringifyYAML(data, {
     prefix: FRONTMATTER_DELIMITER_CODEBLOCK_STYLE,
     suffix: '```',

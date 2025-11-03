@@ -14,7 +14,7 @@
     "@nuxt/devtools": "^2.6.5",
     "@nuxt/eslint-config": "^1.9.0",
     "@nuxtjs/plausible": "^2.0.1",
-    "@types/node": "^24.7.0",
+    "@types/node": "^24.10.0",
     "eslint": "^9.37.0",
     "nuxt": "^4.1.3"
   }

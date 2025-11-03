@@ -12,7 +12,7 @@
   "devDependencies": {
     "@nuxt-themes/docus": "^1.15.1",
     "@nuxt/devtools": "^2.6.5",
-    "@nuxt/eslint-config": "^1.9.0",
+    "@nuxt/eslint-config": "^1.10.0",
     "@nuxtjs/plausible": "^2.0.1",
     "@types/node": "^24.7.0",
     "eslint": "^9.37.0",

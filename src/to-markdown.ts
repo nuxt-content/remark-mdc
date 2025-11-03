@@ -14,7 +14,7 @@ import type { Container } from './micromark-extension/types'
 
 type NodeContainerComponent = Parents & { name: string, fmAttributes?: Record<string, any> }
 
-const shortcut = /^[^\t\n\r "#'.<=>`}]+$/
+const shortcut = /^[^\t\n\r "'.<=>`}]+$/
 const baseFence = 2
 
 // import { defaultHandlers } from 'mdast-util-to-markdown/lib/util/compile-pattern'

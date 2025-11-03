@@ -49,6 +49,9 @@ describe('Attributes', () => {
     'code': {
       markdown: '`code`{#id .class}',
     },
+    '# in class': {
+      markdown: '`code`{#id .bg-[#E74249]}',
+    },
     'strong': {
       markdown: '**strong**{#id .class}',
     },

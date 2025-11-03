@@ -23,7 +23,6 @@ export interface YamlToStringOptions extends ToStringOptions {
   preserveOrder?: boolean
 }
 
-
 export interface RemarkMDCOptions {
   components?: ComponentHandler[]
   frontmatter?: YamlParseOptions

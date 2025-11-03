@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.8.0
+
+[compare changes](https://github.com/nuxt-content/remark-mdc/compare/v3.7.0...v3.8.0)
+
+### 🚀 Enhancements
+
+- Allow passing options to `yaml.stringify` ([7127020](https://github.com/nuxt-content/remark-mdc/commit/7127020))
+
+### 🌊 Types
+
+- Fix stringify options type ([25cc82c](https://github.com/nuxt-content/remark-mdc/commit/25cc82c))
+
+### 🏡 Chore
+
+- Update respository address ([1ae6323](https://github.com/nuxt-content/remark-mdc/commit/1ae6323))
+- Upgrade `package.json` ([b2cc83f](https://github.com/nuxt-content/remark-mdc/commit/b2cc83f))
+- Upgrade deps ([dcb6e13](https://github.com/nuxt-content/remark-mdc/commit/dcb6e13))
+
+### 🤖 CI
+
+- Use pkg-pr-new ([9684437](https://github.com/nuxt-content/remark-mdc/commit/9684437))
+
+### ❤️ Contributors
+
+- Farnabaz <farnabaz@gmail.com>
+
 ## v3.7.0
 
 [compare changes](https://github.com/nuxt-content/remark-mdc/compare/v3.6.0...v3.7.0)

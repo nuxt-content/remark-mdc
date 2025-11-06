@@ -1,5 +1,62 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Attributes > # in class 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "class": "bg-[#E74249]",
+            "id": "id",
+          },
+          "position": {
+            "end": {
+              "column": 7,
+              "line": 1,
+              "offset": 6,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "inlineCode",
+          "value": "code",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 26,
+          "line": 1,
+          "offset": 25,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 26,
+      "line": 1,
+      "offset": 25,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
 exports[`Attributes > boolean 1`] = `
 {
   "children": [

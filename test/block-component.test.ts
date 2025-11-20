@@ -349,5 +349,30 @@ describe('block-component', () => {
         expect(slot.attributes).toEqual({ key: 'value' })
       },
     },
+    'nested-empty-line': {
+      markdown: [
+        '::container{padding="0px"}',
+        '  :::container',
+        '  ---',
+        '  styles: |',
+        '    pre {',
+        '      border: 1px solid red !important;',
+        '',
+        '      span {',
+        '        line-height: 1;',
+        '      }',
+        '    }',
+        '  ---',
+        '  This container has a code block.',
+        '',
+        '  ```js',
+        '  function test() {',
+        '    console.log("test");',
+        '  }',
+        '  ```',
+        '  :::',
+        '::',
+      ].join('\n'),
+    },
   })
 })

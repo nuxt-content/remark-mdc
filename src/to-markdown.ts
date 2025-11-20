@@ -176,7 +176,7 @@ export default (opts: RemarkMDCOptions = {}) => {
       if (nest > 1) {
         value = value
           .split('\n')
-          .map(line => '  ' + line)
+          .map(line => line.length > 0 ? '  ' + line : line)
           .join('\n')
       }
     }

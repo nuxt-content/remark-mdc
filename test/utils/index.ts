@@ -30,3 +30,22 @@ export function runMarkdownTests(tests: Record<string, MarkdownTest>) {
     })
   }
 }
+
+// Internal function to remove position from ast
+function _removePosition(ast: any) {
+  if (Array.isArray(ast)) {
+    ast.forEach(child => _removePosition(child))
+  }
+  else if (ast && typeof ast === 'object') {
+    delete ast.position
+    if (ast.children) {
+      _removePosition(ast.children)
+    }
+    // In case nested properties contain AST children
+    for (const key in ast) {
+      if (ast[key] && typeof ast[key] === 'object' && ast[key] !== null) {
+        _removePosition(ast[key])
+      }
+    }
+  }
+}

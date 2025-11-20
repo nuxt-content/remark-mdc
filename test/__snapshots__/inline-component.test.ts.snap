@@ -206,6 +206,169 @@ exports[`inline-component > empty 1`] = `
 }
 `;
 
+exports[`inline-component > kbd 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 31,
+                  "line": 2,
+                  "offset": 36,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 2,
+                  "offset": 6,
+                },
+              },
+              "type": "text",
+              "value": "You can also use the shortcut ",
+            },
+            {
+              "attributes": {
+                "value": "meta",
+              },
+              "children": [],
+              "data": {
+                "hName": "kbd",
+                "hProperties": {
+                  "value": "meta",
+                },
+              },
+              "fmAttributes": {},
+              "name": "kbd",
+              "position": {
+                "end": {
+                  "column": 49,
+                  "line": 2,
+                  "offset": 54,
+                },
+                "start": {
+                  "column": 31,
+                  "line": 2,
+                  "offset": 36,
+                },
+              },
+              "type": "textComponent",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 52,
+                  "line": 2,
+                  "offset": 57,
+                },
+                "start": {
+                  "column": 49,
+                  "line": 2,
+                  "offset": 54,
+                },
+              },
+              "type": "text",
+              "value": " + ",
+            },
+            {
+              "attributes": {
+                "value": ".",
+              },
+              "children": [],
+              "data": {
+                "hName": "kbd",
+                "hProperties": {
+                  "value": ".",
+                },
+              },
+              "fmAttributes": {},
+              "name": "kbd",
+              "position": {
+                "end": {
+                  "column": 67,
+                  "line": 2,
+                  "offset": 72,
+                },
+                "start": {
+                  "column": 52,
+                  "line": 2,
+                  "offset": 57,
+                },
+              },
+              "type": "textComponent",
+            },
+            {
+              "position": {
+                "end": {
+                  "column": 100,
+                  "line": 2,
+                  "offset": 105,
+                },
+                "start": {
+                  "column": 67,
+                  "line": 2,
+                  "offset": 72,
+                },
+              },
+              "type": "text",
+              "value": " to redirect to the Studio route.",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 100,
+              "line": 2,
+              "offset": 105,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 6,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "data": {
+        "hName": "tip",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "tip",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 3,
+          "offset": 108,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 3,
+      "offset": 108,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
 exports[`inline-component > parentheses 1`] = `
 {
   "children": [

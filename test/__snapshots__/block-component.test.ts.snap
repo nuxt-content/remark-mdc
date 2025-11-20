@@ -1626,6 +1626,159 @@ array:
 }
 `;
 
+exports[`block-component > nested-empty-line 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "padding": "0px",
+      },
+      "children": [
+        {
+          "attributes": {},
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 35,
+                      "line": 13,
+                      "offset": 202,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 13,
+                      "offset": 170,
+                    },
+                  },
+                  "type": "text",
+                  "value": "This container has a code block.",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 35,
+                  "line": 13,
+                  "offset": 202,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 13,
+                  "offset": 170,
+                },
+              },
+              "type": "paragraph",
+            },
+            {
+              "lang": "js",
+              "meta": null,
+              "position": {
+                "end": {
+                  "column": 6,
+                  "line": 19,
+                  "offset": 266,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 15,
+                  "offset": 206,
+                },
+              },
+              "type": "code",
+              "value": "function test() {
+  console.log("test");
+}",
+            },
+          ],
+          "data": {
+            "hName": "container",
+            "hProperties": {
+              "styles": "pre {
+  border: 1px solid red !important;
+
+  span {
+    line-height: 1;
+  }
+}
+",
+            },
+          },
+          "fmAttributes": {
+            "styles": "pre {
+  border: 1px solid red !important;
+
+  span {
+    line-height: 1;
+  }
+}
+",
+          },
+          "name": "container",
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 20,
+              "offset": 272,
+            },
+            "start": {
+              "column": 3,
+              "line": 2,
+              "offset": 29,
+            },
+          },
+          "rawData": "
+  styles: |
+    pre {
+      border: 1px solid red !important;
+
+      span {
+        line-height: 1;
+      }
+    }
+  ---",
+          "type": "containerComponent",
+        },
+      ],
+      "data": {
+        "hName": "container",
+        "hProperties": {
+          "padding": "0px",
+        },
+      },
+      "fmAttributes": {},
+      "name": "container",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 21,
+          "offset": 275,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 21,
+      "offset": 275,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
 exports[`block-component > paragraphWithComponents 1`] = `
 {
   "children": [

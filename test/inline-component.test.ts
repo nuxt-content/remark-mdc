@@ -31,5 +31,8 @@ describe('inline-component', () => {
     'bindingWithDefault': {
       markdown: '{{ $doc.variable || \'mdc\' }}',
     },
+    'kbd': {
+      markdown: '::tip\nYou can also use the shortcut :kbd{value="meta"} + :kbd{value="."} to redirect to the Studio route.\n::',
+    },
   })
 })

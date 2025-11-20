@@ -51,18 +51,18 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^1.10.0",
-    "@nuxt/kit": "^4.2.0",
-    "@nuxt/ui": "4.1.0",
+    "@nuxt/kit": "^4.2.1",
+    "@nuxt/ui": "4.2.0",
     "@nuxthub/core": "^0.9.0",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@types/flat": "^5.0.5",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^24.10.0",
-    "eslint": "^9.39.0",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
     "eslint-plugin-nuxt": "latest",
     "jiti": "^2.6.1",
-    "nuxt": "^4.2.0",
-    "release-it": "^19.0.5",
+    "nuxt": "^4.2.1",
+    "release-it": "^19.0.6",
     "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
@@ -82,5 +82,5 @@
       "after:bump": "npx changelogen@latest --no-commit --no-tag --output --r $(node -p \"require('./package.json').version\")"
     }
   },
-  "packageManager": "pnpm@10.20.0"
+  "packageManager": "pnpm@10.23.0"
 }

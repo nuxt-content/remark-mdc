@@ -117,7 +117,7 @@ export default function createAttributes(
       return nok(code)
     }
 
-    if (code === Codes.hash || code === Codes.dot || code === Codes.closingCurlyBracket || markdownLineEndingOrSpace(code)) {
+    if (code === Codes.dot || code === Codes.closingCurlyBracket || markdownLineEndingOrSpace(code)) {
       effects.exit(type + 'Value' as keyof TokenTypeMap)
       effects.exit(type)
       effects.exit(attributeType)

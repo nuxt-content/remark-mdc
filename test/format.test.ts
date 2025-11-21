@@ -19,9 +19,6 @@ describe('ul', () => {
         '  :::',
         '::',
       ].join('\n'),
-      extra(markdown, ast, expected) {
-        console.log(JSON.stringify(ast, null, 2))
-      }
     },
     nested2: {
       markdown: [

@@ -1,0 +1,244 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ul > nested1 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 19,
+                  "line": 6,
+                  "offset": 77,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 6,
+                  "offset": 61,
+                },
+              },
+              "type": "text",
+              "value": "This is a header",
+            },
+          ],
+          "depth": 1,
+          "position": {
+            "end": {
+              "column": 19,
+              "line": 6,
+              "offset": 77,
+            },
+            "start": {
+              "column": 1,
+              "line": 6,
+              "offset": 59,
+            },
+          },
+          "type": "heading",
+        },
+        {
+          "attributes": {
+            "color": "#000",
+            "name": "mdi:github",
+            "size": "36px",
+          },
+          "children": [],
+          "data": {
+            "hName": "icon",
+            "hProperties": {
+              "color": "#000",
+              "name": "mdi:github",
+              "size": "36px",
+            },
+          },
+          "fmAttributes": {},
+          "name": "icon",
+          "position": {
+            "end": {
+              "column": 50,
+              "line": 8,
+              "offset": 128,
+            },
+            "start": {
+              "column": 1,
+              "line": 8,
+              "offset": 79,
+            },
+          },
+          "type": "textComponent",
+        },
+        {
+          "attributes": {},
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 7,
+                      "line": 11,
+                      "offset": 150,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 11,
+                      "offset": 146,
+                    },
+                  },
+                  "type": "text",
+                  "value": "Well",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 7,
+                  "line": 11,
+                  "offset": 150,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 11,
+                  "offset": 146,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "data": {
+            "hName": "content2",
+            "hProperties": {},
+          },
+          "fmAttributes": {},
+          "name": "content2",
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 12,
+              "offset": 156,
+            },
+            "start": {
+              "column": 3,
+              "line": 10,
+              "offset": 132,
+            },
+          },
+          "type": "containerComponent",
+        },
+      ],
+      "data": {
+        "hName": "container",
+        "hProperties": {
+          "background-color": "#eee",
+          "padding": "20px",
+        },
+      },
+      "fmAttributes": {
+        "background-color": "#eee",
+        "padding": "20px",
+      },
+      "name": "container",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 13,
+          "offset": 159,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "rawData": "
+background-color: "#eee"
+padding: 20px
+---",
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 13,
+      "offset": 159,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`ul > nested2 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [],
+      "data": {
+        "hName": "container",
+        "hProperties": {
+          ":bi": "{"url":"https://example.com","bg":"contain"}",
+          "styles": "p {
+  color: red;
+}
+",
+        },
+      },
+      "fmAttributes": {
+        "bi": {
+          "bg": "contain",
+          "url": "https://example.com",
+        },
+        "styles": "p {
+  color: red;
+}
+",
+      },
+      "name": "container",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 11,
+          "offset": 103,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "rawData": "
+bi:
+  url: https://example.com
+  bg: contain
+styles: |
+  p {
+    color: red;
+  }
+---",
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 11,
+      "offset": 103,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;

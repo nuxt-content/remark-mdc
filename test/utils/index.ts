@@ -49,3 +49,22 @@ function _removePosition(ast: any) {
     }
   }
 }
+
+// Internal function to remove frontmatter attributes from ast
+function _removeFmAttributes(ast: any) {
+  if (Array.isArray(ast)) {
+    ast.forEach(child => _removeFmAttributes(child))
+  }
+  else if (ast && typeof ast === 'object') {
+    ast.attributes = {
+      ...(ast.attributes || {}),
+      ...(ast.fmAttributes || {}),
+    }
+    delete ast.fmAttributes
+    delete ast.data?.hProperties
+    delete ast.rawData
+    if (ast.children) {
+      _removeFmAttributes(ast.children)
+    }
+  }
+}

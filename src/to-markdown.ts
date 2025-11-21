@@ -151,6 +151,8 @@ export default (opts: RemarkMDCOptions = {}) => {
     const attributesText = attributes(node, context)
     if (
       (value + attributesText).length > (opts?.attributes?.maxLength || 80)
+      || Object.keys((node as any).attributes || {}).length > 3
+      || attributesText.includes('\n')
       || Object.keys(node.fmAttributes).length > 0 // remove: allow using both yaml and inline attributes simentensoly
       || node.children?.some((child: RootContent) => child.type === 'componentContainerSection') // remove: allow using both yaml and inline attributes simentensoly
     ) {
@@ -261,6 +263,9 @@ export default (opts: RemarkMDCOptions = {}) => {
         }
         else if (key.startsWith(':') && isValidJSON(value)) {
           values.push(`${key}='${value.replace(/([^/])'/g, '$1\\\'')}'`)
+        }
+        else if (typeof attr[1] === 'object') {
+          values.push(quoted(key, JSON.stringify(value)))
         }
         else {
           values.push(quoted(key, value))

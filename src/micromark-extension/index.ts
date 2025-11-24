@@ -12,6 +12,17 @@ import tokenizeContainer from './tokenize-container'
 import tokenizeContainerIndented from './tokenize-container-indented'
 import { Codes } from './constants'
 import tokenizeContainerSuger from './tokenize-container-suger'
+import { list } from 'micromark-core-commonmark'
+
+const continuationList = list.continuation?.tokenize
+if (list.continuation && continuationList) {
+  list.continuation.tokenize = function (this, effects, ok, nok) {
+    if (this.containerState) {
+      this.containerState.initialBlankLine = true
+    }
+    return continuationList.call(this, effects, ok, nok)
+  }
+}
 
 export default function micromarkComponentsExtension() {
   return {

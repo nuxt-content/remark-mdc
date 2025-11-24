@@ -53,7 +53,6 @@ describe('ul', () => {
     list2: {
       markdown: [
         '- This is a list item.',
-        '',
         '  ::container',
         '  - This is a list item.',
         '  ::',
@@ -113,6 +112,24 @@ describe('ul', () => {
         '  - This is a list item.',
         '  ::',
       ].join('\n'),
+    },
+    list8: {
+      markdown: [
+        '::page-section',
+        '---',
+        'background-image:',
+        '  url: https://images.example.com/dog.png',
+        'color: red',
+        '---',
+        '- This is a list item.2',
+        '',
+        '  :::container',
+        '  :::',
+        '::',
+      ].join('\n'),
+      extra(_markdown, ast, _expected) {
+        expect(ast.children[0].children.length).toBe(2)
+      },
     },
   })
 })

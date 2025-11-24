@@ -168,6 +168,9 @@ export default (opts: RemarkMDCOptions = {}) => {
       return child
     })
 
+    // Fix container nesting in lists
+    detectInvalidNesting(container)
+
     this.exit(token)
   }
 
@@ -340,5 +343,46 @@ export default (opts: RemarkMDCOptions = {}) => {
     canContainEols,
     enter,
     exit,
+  }
+}
+
+/**
+ * Fix container nesting in lists: move containers from list items to parent level
+ * when they should be direct children of the parent container
+ *
+ * @param container - The container to detect invalid nesting in
+ */
+function detectInvalidNesting(container: Container) {
+  const extractedContainers: any[] = []
+  for (const child of container.children) {
+    if (child.type !== 'list' || !child.children) {
+      continue
+    }
+
+    for (const listItem of child.children) {
+      if (listItem.type !== 'listItem' || !listItem.children) {
+        continue
+      }
+
+      const remainingChildren: any[] = []
+      for (const itemChild of listItem.children) {
+        if (
+          (itemChild.type as string) === 'containerComponent'
+          && (itemChild.position?.start?.column || 0) - 4 < (listItem.position?.start?.column || 0)
+        ) {
+          // Extract container from list item to parent level
+          extractedContainers.push(itemChild)
+        }
+        else {
+          remainingChildren.push(itemChild)
+        }
+      }
+      listItem.children = remainingChildren
+    }
+  }
+
+  // Add extracted containers as siblings of the list
+  if (extractedContainers.length > 0) {
+    container.children = [...container.children, ...extractedContainers]
   }
 }

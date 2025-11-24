@@ -135,6 +135,8 @@ export default (opts: RemarkMDCOptions = {}) => {
     const prefix = ':'.repeat(baseFence + nest)
     nest += 1
     const exit = context.enter(node.type)
+    // Reset bullet marker for lists nested containers
+    context.bulletLastUsed = undefined
     let value = prefix + (node.name || '') + label(node, context)
 
     // Move default slot's children to the beginning of the content

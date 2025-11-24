@@ -18,10 +18,10 @@ export function runMarkdownTests(tests: Record<string, MarkdownTest>) {
       expect(parsedData.ast).toMatchSnapshot()
 
       const regeneratedMarkdown = await astToMarkdown(parsedData, plugins, mdcOptions)
-      expect(regeneratedMarkdown.trim()).toEqual(expected || markdown)
       if (extra) {
         extra(markdown, parsedData.ast, expected || markdown)
       }
+      expect(regeneratedMarkdown.trim()).toEqual(expected || markdown)
 
       // We should be able regenerate same markdown starting from the `regeneratedMarkdown`
       const parsedData2 = await markdownToAST(regeneratedMarkdown, plugins, mdcOptions)

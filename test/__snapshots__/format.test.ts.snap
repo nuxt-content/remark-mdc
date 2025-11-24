@@ -1,5 +1,1181 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`ul > list1 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 23,
+                      "line": 1,
+                      "offset": 22,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 1,
+                      "offset": 2,
+                    },
+                  },
+                  "type": "text",
+                  "value": "This is a list item.",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 23,
+                  "line": 1,
+                  "offset": 22,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 23,
+              "line": 1,
+              "offset": 22,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "position": {
+        "end": {
+          "column": 23,
+          "line": 1,
+          "offset": 22,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "spread": false,
+      "start": null,
+      "type": "list",
+    },
+    {
+      "attributes": {},
+      "children": [
+        {
+          "children": [
+            {
+              "checked": null,
+              "children": [
+                {
+                  "children": [
+                    {
+                      "position": {
+                        "end": {
+                          "column": 23,
+                          "line": 4,
+                          "offset": 58,
+                        },
+                        "start": {
+                          "column": 3,
+                          "line": 4,
+                          "offset": 38,
+                        },
+                      },
+                      "type": "text",
+                      "value": "This is a list item.",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 23,
+                      "line": 4,
+                      "offset": 58,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 4,
+                      "offset": 38,
+                    },
+                  },
+                  "type": "paragraph",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 23,
+                  "line": 4,
+                  "offset": 58,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 4,
+                  "offset": 36,
+                },
+              },
+              "spread": false,
+              "type": "listItem",
+            },
+          ],
+          "ordered": false,
+          "position": {
+            "end": {
+              "column": 23,
+              "line": 4,
+              "offset": 58,
+            },
+            "start": {
+              "column": 1,
+              "line": 4,
+              "offset": 36,
+            },
+          },
+          "spread": false,
+          "start": null,
+          "type": "list",
+        },
+      ],
+      "data": {
+        "hName": "container",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "container",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 5,
+          "offset": 61,
+        },
+        "start": {
+          "column": 1,
+          "line": 3,
+          "offset": 24,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 5,
+      "offset": 61,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`ul > list2 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 23,
+                      "line": 1,
+                      "offset": 22,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 1,
+                      "offset": 2,
+                    },
+                  },
+                  "type": "text",
+                  "value": "This is a list item.",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 23,
+                  "line": 1,
+                  "offset": 22,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+              },
+              "type": "paragraph",
+            },
+            {
+              "attributes": {},
+              "children": [
+                {
+                  "children": [
+                    {
+                      "checked": null,
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "position": {
+                                "end": {
+                                  "column": 25,
+                                  "line": 4,
+                                  "offset": 62,
+                                },
+                                "start": {
+                                  "column": 5,
+                                  "line": 4,
+                                  "offset": 42,
+                                },
+                              },
+                              "type": "text",
+                              "value": "This is a list item.",
+                            },
+                          ],
+                          "position": {
+                            "end": {
+                              "column": 25,
+                              "line": 4,
+                              "offset": 62,
+                            },
+                            "start": {
+                              "column": 5,
+                              "line": 4,
+                              "offset": 42,
+                            },
+                          },
+                          "type": "paragraph",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 25,
+                          "line": 4,
+                          "offset": 62,
+                        },
+                        "start": {
+                          "column": 3,
+                          "line": 4,
+                          "offset": 40,
+                        },
+                      },
+                      "spread": false,
+                      "type": "listItem",
+                    },
+                  ],
+                  "ordered": false,
+                  "position": {
+                    "end": {
+                      "column": 25,
+                      "line": 4,
+                      "offset": 62,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 4,
+                      "offset": 40,
+                    },
+                  },
+                  "spread": false,
+                  "start": null,
+                  "type": "list",
+                },
+              ],
+              "data": {
+                "hName": "container",
+                "hProperties": {},
+              },
+              "fmAttributes": {},
+              "name": "container",
+              "position": {
+                "end": {
+                  "column": 5,
+                  "line": 5,
+                  "offset": 67,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 3,
+                  "offset": 26,
+                },
+              },
+              "type": "containerComponent",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 5,
+              "line": 5,
+              "offset": 67,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "spread": true,
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "position": {
+        "end": {
+          "column": 5,
+          "line": 5,
+          "offset": 67,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "spread": false,
+      "start": null,
+      "type": "list",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 5,
+      "line": 5,
+      "offset": 67,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`ul > list4 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "children": [
+            {
+              "checked": null,
+              "children": [
+                {
+                  "children": [
+                    {
+                      "position": {
+                        "end": {
+                          "column": 23,
+                          "line": 2,
+                          "offset": 31,
+                        },
+                        "start": {
+                          "column": 3,
+                          "line": 2,
+                          "offset": 11,
+                        },
+                      },
+                      "type": "text",
+                      "value": "This is a list item.",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 23,
+                      "line": 2,
+                      "offset": 31,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 2,
+                      "offset": 11,
+                    },
+                  },
+                  "type": "paragraph",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 6,
+                  "line": 6,
+                  "offset": 78,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 2,
+                  "offset": 9,
+                },
+              },
+              "spread": true,
+              "type": "listItem",
+            },
+          ],
+          "ordered": false,
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 6,
+              "offset": 78,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 9,
+            },
+          },
+          "spread": false,
+          "start": null,
+          "type": "list",
+        },
+        {
+          "attributes": {},
+          "children": [
+            {
+              "children": [
+                {
+                  "checked": null,
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "position": {
+                            "end": {
+                              "column": 25,
+                              "line": 5,
+                              "offset": 72,
+                            },
+                            "start": {
+                              "column": 5,
+                              "line": 5,
+                              "offset": 52,
+                            },
+                          },
+                          "type": "text",
+                          "value": "This is a list item.",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 25,
+                          "line": 5,
+                          "offset": 72,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 5,
+                          "offset": 52,
+                        },
+                      },
+                      "type": "paragraph",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 25,
+                      "line": 5,
+                      "offset": 72,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 5,
+                      "offset": 50,
+                    },
+                  },
+                  "spread": false,
+                  "type": "listItem",
+                },
+              ],
+              "ordered": false,
+              "position": {
+                "end": {
+                  "column": 25,
+                  "line": 5,
+                  "offset": 72,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 5,
+                  "offset": 50,
+                },
+              },
+              "spread": false,
+              "start": null,
+              "type": "list",
+            },
+          ],
+          "data": {
+            "hName": "container",
+            "hProperties": {},
+          },
+          "fmAttributes": {},
+          "name": "container",
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 6,
+              "offset": 78,
+            },
+            "start": {
+              "column": 3,
+              "line": 4,
+              "offset": 35,
+            },
+          },
+          "type": "containerComponent",
+        },
+      ],
+      "data": {
+        "hName": "parent",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "parent",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 7,
+          "offset": 81,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 7,
+      "offset": 81,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`ul > list5 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 23,
+                      "line": 1,
+                      "offset": 22,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 1,
+                      "offset": 2,
+                    },
+                  },
+                  "type": "text",
+                  "value": "This is a list item.",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 23,
+                  "line": 1,
+                  "offset": 22,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+              },
+              "type": "paragraph",
+            },
+            {
+              "attributes": {},
+              "children": [
+                {
+                  "children": [
+                    {
+                      "checked": null,
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "position": {
+                                "end": {
+                                  "column": 25,
+                                  "line": 3,
+                                  "offset": 61,
+                                },
+                                "start": {
+                                  "column": 5,
+                                  "line": 3,
+                                  "offset": 41,
+                                },
+                              },
+                              "type": "text",
+                              "value": "This is a list item.",
+                            },
+                          ],
+                          "position": {
+                            "end": {
+                              "column": 25,
+                              "line": 3,
+                              "offset": 61,
+                            },
+                            "start": {
+                              "column": 5,
+                              "line": 3,
+                              "offset": 41,
+                            },
+                          },
+                          "type": "paragraph",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 25,
+                          "line": 3,
+                          "offset": 61,
+                        },
+                        "start": {
+                          "column": 3,
+                          "line": 3,
+                          "offset": 39,
+                        },
+                      },
+                      "spread": false,
+                      "type": "listItem",
+                    },
+                  ],
+                  "ordered": false,
+                  "position": {
+                    "end": {
+                      "column": 25,
+                      "line": 3,
+                      "offset": 61,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 3,
+                      "offset": 39,
+                    },
+                  },
+                  "spread": false,
+                  "start": null,
+                  "type": "list",
+                },
+              ],
+              "data": {
+                "hName": "container",
+                "hProperties": {},
+              },
+              "fmAttributes": {},
+              "name": "container",
+              "position": {
+                "end": {
+                  "column": 5,
+                  "line": 4,
+                  "offset": 66,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 25,
+                },
+              },
+              "type": "containerComponent",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 5,
+              "line": 4,
+              "offset": 66,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "position": {
+        "end": {
+          "column": 5,
+          "line": 4,
+          "offset": 66,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "spread": false,
+      "start": null,
+      "type": "list",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 5,
+      "line": 4,
+      "offset": 66,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`ul > list6 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "children": [
+            {
+              "checked": null,
+              "children": [
+                {
+                  "children": [
+                    {
+                      "position": {
+                        "end": {
+                          "column": 23,
+                          "line": 2,
+                          "offset": 31,
+                        },
+                        "start": {
+                          "column": 3,
+                          "line": 2,
+                          "offset": 11,
+                        },
+                      },
+                      "type": "text",
+                      "value": "This is a list item.",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 23,
+                      "line": 2,
+                      "offset": 31,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 2,
+                      "offset": 11,
+                    },
+                  },
+                  "type": "paragraph",
+                },
+                {
+                  "attributes": {},
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "checked": null,
+                          "children": [
+                            {
+                              "children": [
+                                {
+                                  "position": {
+                                    "end": {
+                                      "column": 27,
+                                      "line": 4,
+                                      "offset": 75,
+                                    },
+                                    "start": {
+                                      "column": 7,
+                                      "line": 4,
+                                      "offset": 55,
+                                    },
+                                  },
+                                  "type": "text",
+                                  "value": "This is a list item.",
+                                },
+                              ],
+                              "position": {
+                                "end": {
+                                  "column": 27,
+                                  "line": 4,
+                                  "offset": 75,
+                                },
+                                "start": {
+                                  "column": 7,
+                                  "line": 4,
+                                  "offset": 55,
+                                },
+                              },
+                              "type": "paragraph",
+                            },
+                          ],
+                          "position": {
+                            "end": {
+                              "column": 27,
+                              "line": 4,
+                              "offset": 75,
+                            },
+                            "start": {
+                              "column": 5,
+                              "line": 4,
+                              "offset": 53,
+                            },
+                          },
+                          "spread": false,
+                          "type": "listItem",
+                        },
+                      ],
+                      "ordered": false,
+                      "position": {
+                        "end": {
+                          "column": 27,
+                          "line": 4,
+                          "offset": 75,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 4,
+                          "offset": 53,
+                        },
+                      },
+                      "spread": false,
+                      "start": null,
+                      "type": "list",
+                    },
+                  ],
+                  "data": {
+                    "hName": "container",
+                    "hProperties": {},
+                  },
+                  "fmAttributes": {},
+                  "name": "container",
+                  "position": {
+                    "end": {
+                      "column": 8,
+                      "line": 5,
+                      "offset": 83,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 3,
+                      "offset": 36,
+                    },
+                  },
+                  "type": "containerComponent",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 8,
+                  "line": 5,
+                  "offset": 83,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 2,
+                  "offset": 9,
+                },
+              },
+              "spread": false,
+              "type": "listItem",
+            },
+          ],
+          "ordered": false,
+          "position": {
+            "end": {
+              "column": 8,
+              "line": 5,
+              "offset": 83,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 9,
+            },
+          },
+          "spread": false,
+          "start": null,
+          "type": "list",
+        },
+      ],
+      "data": {
+        "hName": "parent",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "parent",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 6,
+          "offset": 86,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 6,
+      "offset": 86,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`ul > list7 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 23,
+                      "line": 1,
+                      "offset": 22,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 1,
+                      "offset": 2,
+                    },
+                  },
+                  "type": "text",
+                  "value": "This is a list item.",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 23,
+                  "line": 1,
+                  "offset": 22,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+              },
+              "type": "paragraph",
+            },
+            {
+              "attributes": {},
+              "children": [
+                {
+                  "children": [
+                    {
+                      "checked": null,
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "position": {
+                                "end": {
+                                  "column": 27,
+                                  "line": 3,
+                                  "offset": 66,
+                                },
+                                "start": {
+                                  "column": 7,
+                                  "line": 3,
+                                  "offset": 46,
+                                },
+                              },
+                              "type": "text",
+                              "value": "This is a list item.",
+                            },
+                          ],
+                          "position": {
+                            "end": {
+                              "column": 27,
+                              "line": 3,
+                              "offset": 66,
+                            },
+                            "start": {
+                              "column": 7,
+                              "line": 3,
+                              "offset": 46,
+                            },
+                          },
+                          "type": "paragraph",
+                        },
+                      ],
+                      "position": {
+                        "end": {
+                          "column": 27,
+                          "line": 3,
+                          "offset": 66,
+                        },
+                        "start": {
+                          "column": 5,
+                          "line": 3,
+                          "offset": 44,
+                        },
+                      },
+                      "spread": false,
+                      "type": "listItem",
+                    },
+                  ],
+                  "ordered": false,
+                  "position": {
+                    "end": {
+                      "column": 27,
+                      "line": 3,
+                      "offset": 66,
+                    },
+                    "start": {
+                      "column": 5,
+                      "line": 3,
+                      "offset": 44,
+                    },
+                  },
+                  "spread": false,
+                  "start": null,
+                  "type": "list",
+                },
+              ],
+              "data": {
+                "hName": "container",
+                "hProperties": {},
+              },
+              "fmAttributes": {},
+              "name": "container",
+              "position": {
+                "end": {
+                  "column": 8,
+                  "line": 4,
+                  "offset": 74,
+                },
+                "start": {
+                  "column": 5,
+                  "line": 2,
+                  "offset": 27,
+                },
+              },
+              "type": "containerComponent",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 8,
+              "line": 4,
+              "offset": 74,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "position": {
+        "end": {
+          "column": 8,
+          "line": 4,
+          "offset": 74,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "spread": false,
+      "start": null,
+      "type": "list",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 8,
+      "line": 4,
+      "offset": 74,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
 exports[`ul > nested1 1`] = `
 {
   "children": [

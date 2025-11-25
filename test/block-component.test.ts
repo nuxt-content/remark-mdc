@@ -65,6 +65,14 @@ describe('block-component', () => {
     },
     'jsonScapeAttr': {
       markdown: '::foo{:test=\'{"foo":"I\\\'d love to"}\'}\n::',
+      expected: [
+        '::foo',
+        '---',
+        'test:',
+        '  foo: I\'d love to',
+        '---',
+        '::',
+      ].join('\n'),
       extra: (_md, ast) => {
         expect(ast.children[0].type).toBe('containerComponent')
       },
@@ -271,7 +279,15 @@ describe('block-component', () => {
     },
     'component-attributes-array-of-string': {
       markdown: '::container-component{:items=\'["Nuxt", "Vue"]\'}\n::',
-      // expected: '::container-component{:items="[&#x22;Nuxt&#x22;, &#x22;Vue&#x22;]"}\n::',
+      expected: [
+        '::container-component',
+        '---',
+        'items:',
+        '  - Nuxt',
+        '  - Vue',
+        '---',
+        '::',
+      ].join('\n'),
       extra(_, ast) {
         expect(ast.children[0].attributes).toEqual({ ':items': '["Nuxt", "Vue"]' })
         expect(ast.children[0].data.hProperties).toEqual({ ':items': '["Nuxt", "Vue"]' })
@@ -279,6 +295,13 @@ describe('block-component', () => {
     },
     'component-attributes-bad-array': {
       markdown: '::container-component{:items="[Nuxt,Vue]"}\n::',
+      expected: [
+        '::container-component',
+        '---',
+        ':items: "[Nuxt,Vue]"',
+        '---',
+        '::',
+      ].join('\n'),
       extra(_, ast) {
         expect(ast.children[0].attributes).toEqual({ ':items': '[Nuxt,Vue]' })
         expect(ast.children[0].data.hProperties).toEqual({ ':items': '[Nuxt,Vue]' })
@@ -286,6 +309,16 @@ describe('block-component', () => {
     },
     'component-attributes-array-of-number': {
       markdown: '::container-component{:items=\'[1,2,3.5]\'}\n::',
+      expected: [
+        '::container-component',
+        '---',
+        'items:',
+        '  - 1',
+        '  - 2',
+        '  - 3.5',
+        '---',
+        '::',
+      ].join('\n'),
       extra(_, ast) {
         expect(ast.children[0].attributes).toEqual({ ':items': '[1,2,3.5]' })
         expect(ast.children[0].data.hProperties).toEqual({ ':items': '[1,2,3.5]' })
@@ -293,7 +326,16 @@ describe('block-component', () => {
     },
     'component-attributes-array-convert-double-quote': {
       markdown: '::container-component{:items="[1,2,3.5]"}\n::',
-      expected: '::container-component{:items=\'[1,2,3.5]\'}\n::',
+      expected: [
+        '::container-component',
+        '---',
+        'items:',
+        '  - 1',
+        '  - 2',
+        '  - 3.5',
+        '---',
+        '::',
+      ].join('\n'),
       extra(_, ast) {
         expect(ast.children[0].attributes).toEqual({ ':items': '[1,2,3.5]' })
         expect(ast.children[0].data.hProperties).toEqual({ ':items': '[1,2,3.5]' })
@@ -301,6 +343,14 @@ describe('block-component', () => {
     },
     'component-attributes-object': {
       markdown: '::container-component{:items=\'{"key": "value"}\'}\n::',
+      expected: [
+        '::container-component',
+        '---',
+        'items:',
+        '  key: value',
+        '---',
+        '::',
+      ].join('\n'),
       extra(_, ast) {
         expect(ast.children[0].attributes).toEqual({ ':items': '{"key": "value"}' })
         expect(ast.children[0].data.hProperties).toEqual({ ':items': '{"key": "value"}' })
@@ -309,6 +359,21 @@ describe('block-component', () => {
     'component-hProperties-be-the-same': {
       markdown: [
         '::container-component{:items=\'{"key":"value"}\'}\n::',
+        '',
+        '::container-component',
+        '---',
+        'items:',
+        '  key: value',
+        '---',
+        '::',
+      ].join('\n'),
+      expected: [
+        '::container-component',
+        '---',
+        'items:',
+        '  key: value',
+        '---',
+        '::',
         '',
         '::container-component',
         '---',

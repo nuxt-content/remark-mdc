@@ -230,6 +230,6 @@ attributes:
 ---
 ::`,
       removeFmAttributes: true,
-    }
+    },
   })
 })

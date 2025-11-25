@@ -158,7 +158,7 @@ export default (opts: RemarkMDCOptions = {}) => {
       || attributesEntries.length > 3
       // It is recommended to use yaml for complex attributes
       || attributesEntries.some(([_, value]) => typeof value === 'object')
-      || attributesText.match(/(=['"][\{\[]|\n)/)
+      || attributesText.match(/(=['"][{[]|\n)/) // ='[]' ='{}' ="{}" ="[]"
       || node.children?.some((child: RootContent) => child.type === 'componentContainerSection') // remove: allow using both yaml and inline attributes simentensoly
     ) {
       // add attributes to frontmatter

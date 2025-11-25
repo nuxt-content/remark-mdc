@@ -193,7 +193,7 @@ color: red
 
   More outer content.
   :::
-::`
-    }
+::`,
+    },
   })
 })

@@ -151,11 +151,14 @@ export default (opts: RemarkMDCOptions = {}) => {
     // ensure fmAttributes exists
     node.fmAttributes = node.fmAttributes || {}
     const attributesText = attributes(node, context)
+    const attributesEntries = Object.entries((node as any).attributes || {})
     if (
       (value + attributesText).length > (opts?.attributes?.maxLength || 80)
-      || Object.keys((node as any).attributes || {}).length > 3
-      || attributesText.includes('\n')
       || Object.keys(node.fmAttributes).length > 0 // remove: allow using both yaml and inline attributes simentensoly
+      || attributesEntries.length > 3
+      // It is recommended to use yaml for complex attributes
+      || attributesEntries.some(([_, value]) => typeof value === 'object')
+      || attributesText.match(/(=['"][\{\[]|\n)/)
       || node.children?.some((child: RootContent) => child.type === 'componentContainerSection') // remove: allow using both yaml and inline attributes simentensoly
     ) {
       // add attributes to frontmatter

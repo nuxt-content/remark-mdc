@@ -195,5 +195,41 @@ color: red
   :::
 ::`,
     },
+    list11: {
+      markdown: `::page-container
+---
+simple-array:
+  - item1
+  - item2
+  - item3
+---
+::
+
+::page-container
+---
+items:
+  - name: Item 1
+    description: First item
+  - name: Item 2
+    description: Second item
+---
+::
+
+::page-container
+---
+attributes:
+  - domains:
+      - internal
+  - env:
+      - dev
+      - staging
+      - prod
+  - dogs:
+      - husky
+      - beagle
+---
+::`,
+      removeFmAttributes: true,
+    }
   })
 })

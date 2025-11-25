@@ -3217,6 +3217,164 @@ color: red
 }
 `;
 
+exports[`ul > list11 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [],
+      "data": {
+        "hName": "page-container",
+        "hProperties": {
+          ":simple-array": "["item1","item2","item3"]",
+        },
+      },
+      "fmAttributes": {
+        "simple-array": [
+          "item1",
+          "item2",
+          "item3",
+        ],
+      },
+      "name": "page-container",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 8,
+          "offset": 71,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "rawData": "
+simple-array:
+  - item1
+  - item2
+  - item3
+---",
+      "type": "containerComponent",
+    },
+    {
+      "attributes": {},
+      "children": [],
+      "data": {
+        "hName": "page-container",
+        "hProperties": {
+          ":items": "[{"name":"Item 1","description":"First item"},{"name":"Item 2","description":"Second item"}]",
+        },
+      },
+      "fmAttributes": {
+        "items": [
+          {
+            "description": "First item",
+            "name": "Item 1",
+          },
+          {
+            "description": "Second item",
+            "name": "Item 2",
+          },
+        ],
+      },
+      "name": "page-container",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 18,
+          "offset": 198,
+        },
+        "start": {
+          "column": 1,
+          "line": 10,
+          "offset": 73,
+        },
+      },
+      "rawData": "
+items:
+  - name: Item 1
+    description: First item
+  - name: Item 2
+    description: Second item
+---",
+      "type": "containerComponent",
+    },
+    {
+      "attributes": {},
+      "children": [],
+      "data": {
+        "hName": "page-container",
+        "hProperties": {
+          ":attributes": "[{"domains":["internal"]},{"env":["dev","staging","prod"]},{"dogs":["husky","beagle"]}]",
+        },
+      },
+      "fmAttributes": {
+        "attributes": [
+          {
+            "domains": [
+              "internal",
+            ],
+          },
+          {
+            "env": [
+              "dev",
+              "staging",
+              "prod",
+            ],
+          },
+          {
+            "dogs": [
+              "husky",
+              "beagle",
+            ],
+          },
+        ],
+      },
+      "name": "page-container",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 33,
+          "offset": 358,
+        },
+        "start": {
+          "column": 1,
+          "line": 20,
+          "offset": 200,
+        },
+      },
+      "rawData": "
+attributes:
+  - domains:
+      - internal
+  - env:
+      - dev
+      - staging
+      - prod
+  - dogs:
+      - husky
+      - beagle
+---",
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 33,
+      "offset": 358,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
 exports[`ul > nested1 1`] = `
 {
   "children": [

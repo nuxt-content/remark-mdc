@@ -7,15 +7,20 @@ interface MarkdownTest {
   extra?: (markdown: string, ast: any, expected: string) => void
   plugins?: any[]
   mdcOptions?: Record<string, any>
+  removeFmAttributes?: boolean
 }
 
 export function runMarkdownTests(tests: Record<string, MarkdownTest>) {
   for (const key in tests) {
-    const { markdown, expected, extra, plugins = [], mdcOptions = {} } = tests[key]
+    const { markdown, expected, extra, plugins = [], mdcOptions = {}, removeFmAttributes = false } = tests[key]
     test(key, async () => {
       const parsedData = await markdownToAST(markdown, plugins, mdcOptions)
 
       expect(parsedData.ast).toMatchSnapshot()
+
+      if (removeFmAttributes) {
+        _removeFmAttributes(parsedData.ast)
+      }
 
       const regeneratedMarkdown = await astToMarkdown(parsedData, plugins, mdcOptions)
       if (extra) {

@@ -50,7 +50,7 @@
     "yaml": "^2.8.1"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^1.10.0",
+    "@nuxt/eslint-config": "^1.11.0",
     "@nuxt/kit": "^4.2.1",
     "@nuxt/ui": "4.2.1",
     "@nuxthub/core": "^0.9.0",
@@ -82,5 +82,5 @@
       "after:bump": "npx changelogen@latest --no-commit --no-tag --output --r $(node -p \"require('./package.json').version\")"
     }
   },
-  "packageManager": "pnpm@10.23.0"
+  "packageManager": "pnpm@10.24.0"
 }

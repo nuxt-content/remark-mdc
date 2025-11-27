@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.9.0
+
+[compare changes](https://github.com/nuxt-content/remark-mdc/compare/v3.8.1...v3.9.0)
+
+### 🩹 Fixes
+
+- **stringify:** Do not add indent empty lines ([c25661a](https://github.com/nuxt-content/remark-mdc/commit/c25661a))
+- Allow using `#` in class name ([#116](https://github.com/nuxt-content/remark-mdc/pull/116))
+- **stringify:** Yaml props if more than 3 props or have multi-line value ([15bae0f](https://github.com/nuxt-content/remark-mdc/commit/15bae0f))
+- Container indentation relative to parent, not lists ([f78753c](https://github.com/nuxt-content/remark-mdc/commit/f78753c))
+- ListItem children should not separated by blank line ([287822a](https://github.com/nuxt-content/remark-mdc/commit/287822a))
+- Use yaml format for complex attributes ([8b0c25f](https://github.com/nuxt-content/remark-mdc/commit/8b0c25f))
+- Convert json attributes to yaml syntax ([597e125](https://github.com/nuxt-content/remark-mdc/commit/597e125))
+
+### 🏡 Chore
+
+- Upgrade deps ([d917f1a](https://github.com/nuxt-content/remark-mdc/commit/d917f1a))
+- Upgrade deps ([76bc3a4](https://github.com/nuxt-content/remark-mdc/commit/76bc3a4))
+
+### ✅ Tests
+
+- Add more test in formatting ([50d9f2e](https://github.com/nuxt-content/remark-mdc/commit/50d9f2e))
+- Add more test in formatting ([3401af1](https://github.com/nuxt-content/remark-mdc/commit/3401af1))
+
+### ❤️ Contributors
+
+- Farnabaz <farnabaz@gmail.com>
+
 ## v3.8.1
 
 [compare changes](https://github.com/nuxt-content/remark-mdc/compare/v3.8.0...v3.8.1)

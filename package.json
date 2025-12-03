@@ -47,13 +47,13 @@
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0",
     "unist-util-visit-parents": "^6.0.2",
-    "yaml": "^2.8.1"
+    "yaml": "^2.8.2"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^1.11.0",
     "@nuxt/kit": "^4.2.1",
     "@nuxt/ui": "4.2.1",
-    "@nuxthub/core": "^0.9.0",
+    "@nuxthub/core": "^0.9.1",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@types/flat": "^5.0.5",
     "@types/js-yaml": "^4.0.9",

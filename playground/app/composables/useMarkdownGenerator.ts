@@ -32,10 +32,10 @@ export function useMarkdownGenerator(input: Ref<object>, mdcOptions = ref({})) {
     markdown.value = res
   }
 
-  watch(() => input.value, v => generate(v))
+  watch(() => input.value, v => v && generate(v))
   watch(() => mdcOptions.value, () => {
     _stream = null
-    generate(input.value)
+    input.value && generate(input.value)
   }, { deep: true })
 
   if (input.value) {

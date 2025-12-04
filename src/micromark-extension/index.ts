@@ -13,6 +13,8 @@ import tokenizeContainerIndented from './tokenize-container-indented'
 import { Codes } from './constants'
 import tokenizeContainerSuger from './tokenize-container-suger'
 import { list } from 'micromark-core-commonmark'
+import { htmlFlow } from './html-flow'
+import { htmlText } from './html-text'
 
 const continuationList = list.continuation?.tokenize
 if (list.continuation && continuationList) {
@@ -30,9 +32,11 @@ export default function micromarkComponentsExtension() {
       [Codes.colon]: tokenizeInline,
       [Codes.openingSquareBracket]: [tokenizeSpan],
       [Codes.openingCurlyBracket]: [tokenizeBinding, tokenizeAttribute],
+      [Codes.LessThan]: htmlText
     },
     flow: {
       [Codes.colon]: [tokenizeContainer, tokenizeContainerSuger],
+      [Codes.LessThan]: htmlFlow
     },
     flowInitial: {
       '-2': tokenizeContainerIndented,

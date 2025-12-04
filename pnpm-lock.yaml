@@ -14,6 +14,9 @@ importers:
       '@types/unist':
         specifier: ^3.0.3
         version: 3.0.3
+      devlop:
+        specifier: ^1.1.0
+        version: 1.1.0
       flat:
         specifier: ^6.0.1
         version: 6.0.1
@@ -38,6 +41,12 @@ importers:
       micromark-util-character:
         specifier: ^2.1.1
         version: 2.1.1
+      micromark-util-html-tag-name:
+        specifier: ^2.0.1
+        version: 2.0.1
+      micromark-util-symbol:
+        specifier: ^2.0.1
+        version: 2.0.1
       micromark-util-types:
         specifier: ^2.0.2
         version: 2.0.2

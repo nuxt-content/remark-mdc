@@ -32,11 +32,11 @@ export default function micromarkComponentsExtension() {
       [Codes.colon]: tokenizeInline,
       [Codes.openingSquareBracket]: [tokenizeSpan],
       [Codes.openingCurlyBracket]: [tokenizeBinding, tokenizeAttribute],
-      [Codes.LessThan]: htmlText
+      [Codes.LessThan]: htmlText,
     },
     flow: {
       [Codes.colon]: [tokenizeContainer, tokenizeContainerSuger],
-      [Codes.LessThan]: htmlFlow
+      [Codes.LessThan]: htmlFlow,
     },
     flowInitial: {
       '-2': tokenizeContainerIndented,

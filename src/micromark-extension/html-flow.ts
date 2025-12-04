@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 /**
  * @import {
  *   Code,
@@ -9,31 +11,31 @@
  * } from 'micromark-util-types'
  */
 
-import {ok as assert} from 'devlop'
+import { ok as assert } from 'devlop'
 import {
   asciiAlphanumeric,
   asciiAlpha,
   markdownLineEndingOrSpace,
   markdownLineEnding,
-  markdownSpace
+  markdownSpace,
 } from 'micromark-util-character'
-import {htmlBlockNames, htmlRawNames} from 'micromark-util-html-tag-name'
-import {codes, constants, types} from 'micromark-util-symbol'
-import {blankLine} from 'micromark-core-commonmark'
+import { htmlBlockNames, htmlRawNames } from 'micromark-util-html-tag-name'
+import { codes, constants, types } from 'micromark-util-symbol'
+import { blankLine } from 'micromark-core-commonmark'
 
 /** @type {Construct} */
 export const htmlFlow = {
   concrete: true,
   name: 'htmlFlow',
   resolveTo: resolveToHtmlFlow,
-  tokenize: tokenizeHtmlFlow
+  tokenize: tokenizeHtmlFlow,
 }
 
 /** @type {Construct} */
-const blankLineBefore = {partial: true, tokenize: tokenizeBlankLineBefore}
+const blankLineBefore = { partial: true, tokenize: tokenizeBlankLineBefore }
 const nonLazyContinuationStart = {
   partial: true,
-  tokenize: tokenizeNonLazyContinuationStart
+  tokenize: tokenizeNonLazyContinuationStart,
 }
 
 /** @type {Resolver} */
@@ -42,8 +44,8 @@ function resolveToHtmlFlow(events) {
 
   while (index--) {
     if (
-      events[index][0] === 'enter' &&
-      events[index][1].type === types.htmlFlow
+      events[index][0] === 'enter'
+      && events[index][1].type === types.htmlFlow
     ) {
       break
     }
@@ -67,6 +69,7 @@ function resolveToHtmlFlow(events) {
  * @type {Tokenizer}
  */
 function tokenizeHtmlFlow(effects, ok, nok) {
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const self = this
   /** @type {number} */
   let marker
@@ -286,10 +289,10 @@ function tokenizeHtmlFlow(effects, ok, nok) {
    */
   function tagName(code) {
     if (
-      code === codes.eof ||
-      code === codes.slash ||
-      code === codes.greaterThan ||
-      markdownLineEndingOrSpace(code)
+      code === codes.eof
+      || code === codes.slash
+      || code === codes.greaterThan
+      || markdownLineEndingOrSpace(code)
     ) {
       const slash = code === codes.slash
       const name = buffer.toLowerCase()
@@ -446,11 +449,11 @@ function tokenizeHtmlFlow(effects, ok, nok) {
   function completeAttributeName(code) {
     // ASCII alphanumerical and `-`, `.`, `:`, and `_`.
     if (
-      code === codes.dash ||
-      code === codes.dot ||
-      code === codes.colon ||
-      code === codes.underscore ||
-      asciiAlphanumeric(code)
+      code === codes.dash
+      || code === codes.dot
+      || code === codes.colon
+      || code === codes.underscore
+      || asciiAlphanumeric(code)
     ) {
       effects.consume(code)
       return completeAttributeName
@@ -501,11 +504,11 @@ function tokenizeHtmlFlow(effects, ok, nok) {
    */
   function completeAttributeValueBefore(code) {
     if (
-      code === codes.eof ||
-      code === codes.lessThan ||
-      code === codes.equalsTo ||
-      code === codes.greaterThan ||
-      code === codes.graveAccent
+      code === codes.eof
+      || code === codes.lessThan
+      || code === codes.equalsTo
+      || code === codes.greaterThan
+      || code === codes.graveAccent
     ) {
       return nok(code)
     }
@@ -563,15 +566,15 @@ function tokenizeHtmlFlow(effects, ok, nok) {
    */
   function completeAttributeValueUnquoted(code) {
     if (
-      code === codes.eof ||
-      code === codes.quotationMark ||
-      code === codes.apostrophe ||
-      code === codes.slash ||
-      code === codes.lessThan ||
-      code === codes.equalsTo ||
-      code === codes.greaterThan ||
-      code === codes.graveAccent ||
-      markdownLineEndingOrSpace(code)
+      code === codes.eof
+      || code === codes.quotationMark
+      || code === codes.apostrophe
+      || code === codes.slash
+      || code === codes.lessThan
+      || code === codes.equalsTo
+      || code === codes.greaterThan
+      || code === codes.graveAccent
+      || markdownLineEndingOrSpace(code)
     ) {
       return completeAttributeNameAfter(code)
     }
@@ -593,9 +596,9 @@ function tokenizeHtmlFlow(effects, ok, nok) {
    */
   function completeAttributeValueQuotedAfter(code) {
     if (
-      code === codes.slash ||
-      code === codes.greaterThan ||
-      markdownSpace(code)
+      code === codes.slash
+      || code === codes.greaterThan
+      || markdownSpace(code)
     ) {
       return completeAttributeNameBefore(code)
     }
@@ -684,8 +687,8 @@ function tokenizeHtmlFlow(effects, ok, nok) {
     }
 
     if (
-      markdownLineEnding(code) &&
-      (marker === constants.htmlBasic || marker === constants.htmlComplete)
+      markdownLineEnding(code)
+      && (marker === constants.htmlBasic || marker === constants.htmlComplete)
     ) {
       effects.exit(types.htmlFlowData)
       /** @remark-mdc addittion start */
@@ -694,7 +697,7 @@ function tokenizeHtmlFlow(effects, ok, nok) {
       return effects.check(
         blankLineBefore,
         continuationAfter,
-        continuationStart
+        continuationStart,
       )(code)
     }
 
@@ -722,7 +725,7 @@ function tokenizeHtmlFlow(effects, ok, nok) {
     return effects.check(
       nonLazyContinuationStart,
       continuationStartNonLazy,
-      continuationAfter
+      continuationAfter,
     )(code)
   }
 
@@ -934,6 +937,7 @@ function tokenizeHtmlFlow(effects, ok, nok) {
  * @type {Tokenizer}
  */
 function tokenizeNonLazyContinuationStart(effects, ok, nok) {
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const self = this
 
   return start

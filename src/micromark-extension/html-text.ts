@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 /**
  * @import {
  *   Code,
@@ -8,19 +10,19 @@
  * } from 'micromark-util-types'
  */
 
-import {ok as assert} from 'devlop'
-import {factorySpace} from 'micromark-factory-space'
+import { ok as assert } from 'devlop'
+import { factorySpace } from 'micromark-factory-space'
 import {
   asciiAlphanumeric,
   asciiAlpha,
   markdownLineEndingOrSpace,
   markdownLineEnding,
-  markdownSpace
+  markdownSpace,
 } from 'micromark-util-character'
-import {codes, constants, types} from 'micromark-util-symbol'
+import { codes, constants, types } from 'micromark-util-symbol'
 
 /** @type {Construct} */
-export const htmlText = {name: 'htmlText', tokenize: tokenizeHtmlText}
+export const htmlText = { name: 'htmlText', tokenize: tokenizeHtmlText }
 
 /**
  * @this {TokenizeContext}
@@ -28,6 +30,7 @@ export const htmlText = {name: 'htmlText', tokenize: tokenizeHtmlText}
  * @type {Tokenizer}
  */
 function tokenizeHtmlText(effects, ok, nok) {
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
   const self = this
   /** @type {NonNullable<Code> | undefined} */
   let marker
@@ -455,9 +458,9 @@ function tokenizeHtmlText(effects, ok, nok) {
     }
 
     if (
-      code === codes.slash ||
-      code === codes.greaterThan ||
-      markdownLineEndingOrSpace(code)
+      code === codes.slash
+      || code === codes.greaterThan
+      || markdownLineEndingOrSpace(code)
     ) {
       return tagOpenBetween(code)
     }
@@ -520,11 +523,11 @@ function tokenizeHtmlText(effects, ok, nok) {
   function tagOpenAttributeName(code) {
     // ASCII alphabetical and `-`, `.`, `:`, and `_`.
     if (
-      code === codes.dash ||
-      code === codes.dot ||
-      code === codes.colon ||
-      code === codes.underscore ||
-      asciiAlphanumeric(code)
+      code === codes.dash
+      || code === codes.dot
+      || code === codes.colon
+      || code === codes.underscore
+      || asciiAlphanumeric(code)
     ) {
       effects.consume(code)
       return tagOpenAttributeName
@@ -576,11 +579,11 @@ function tokenizeHtmlText(effects, ok, nok) {
    */
   function tagOpenAttributeValueBefore(code) {
     if (
-      code === codes.eof ||
-      code === codes.lessThan ||
-      code === codes.equalsTo ||
-      code === codes.greaterThan ||
-      code === codes.graveAccent
+      code === codes.eof
+      || code === codes.lessThan
+      || code === codes.equalsTo
+      || code === codes.greaterThan
+      || code === codes.graveAccent
     ) {
       return nok(code)
     }
@@ -647,20 +650,20 @@ function tokenizeHtmlText(effects, ok, nok) {
    */
   function tagOpenAttributeValueUnquoted(code) {
     if (
-      code === codes.eof ||
-      code === codes.quotationMark ||
-      code === codes.apostrophe ||
-      code === codes.lessThan ||
-      code === codes.equalsTo ||
-      code === codes.graveAccent
+      code === codes.eof
+      || code === codes.quotationMark
+      || code === codes.apostrophe
+      || code === codes.lessThan
+      || code === codes.equalsTo
+      || code === codes.graveAccent
     ) {
       return nok(code)
     }
 
     if (
-      code === codes.slash ||
-      code === codes.greaterThan ||
-      markdownLineEndingOrSpace(code)
+      code === codes.slash
+      || code === codes.greaterThan
+      || markdownLineEndingOrSpace(code)
     ) {
       return tagOpenBetween(code)
     }
@@ -682,9 +685,9 @@ function tokenizeHtmlText(effects, ok, nok) {
    */
   function tagOpenAttributeValueQuotedAfter(code) {
     if (
-      code === codes.slash ||
-      code === codes.greaterThan ||
-      markdownLineEndingOrSpace(code)
+      code === codes.slash
+      || code === codes.greaterThan
+      || markdownLineEndingOrSpace(code)
     ) {
       return tagOpenBetween(code)
     }
@@ -755,7 +758,7 @@ function tokenizeHtmlText(effects, ok, nok) {
     // Always populated by defaults.
     assert(
       self.parser.constructs.disable.null,
-      'expected `disable.null` to be populated'
+      'expected `disable.null` to be populated',
     )
     return markdownSpace(code)
       ? factorySpace(
@@ -764,7 +767,7 @@ function tokenizeHtmlText(effects, ok, nok) {
           types.linePrefix,
           self.parser.constructs.disable.null.includes('codeIndented')
             ? undefined
-            : constants.tabSize
+            : constants.tabSize,
         )(code)
       : lineEndingAfterPrefix(code)
   }

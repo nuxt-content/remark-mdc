@@ -231,5 +231,18 @@ attributes:
 ::`,
       removeFmAttributes: true,
     },
+    list12: {
+      markdown: `::page-section
+- This is a list item.
+
+  :::container
+  - This is a list item.
+  :::
+::`,
+      extra(_markdown, ast, _expected) {
+        // nested container should not be child of list item
+        expect(ast.children[0].children.length).toBe(2)
+      },
+    }
   })
 })

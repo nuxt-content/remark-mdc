@@ -37,26 +37,57 @@ import { JsonViewer } from 'vue3-json-viewer'
 import 'vue3-json-viewer/dist/vue3-json-viewer.css'
 
 const mdcOptions = ref({ experimental: { autoUnwrap: true, componentCodeBlockYamlProps: false } })
-const markdown = ref(`::page-section
-- This is a list item.
+const markdown = ref(`# Hello World
 
-  :::container
-  ~~~json
-  function a() {
-    return 'a'
-  }
-  function b() {
-    return 'b'
-  }
-  function c() {
-    return 'c'
-  }
-  function d() {
-    return 'd'
-  }
-  ~~~
+{{ $doc.name || 'Nuxt' }}
+
+| Col1 |    Col2    |
+|  --  |    -----   |
+|aaa   |      bbb   |
+
+[span]
+
+- [ ] Task 1 [span]
+- [x] Task 2
+
+::simple-text{c="c1" b="b1"}
+test
+::
+
+::single-empty-slot
+#slot
+::
+
+::with-frontmatter
+---
+key: value
+array:
+  - item
+  - itemKey: value
+---
+::
+
+::with-frontmatter-and-nested-component
+---
+key: value
+array:
+  - item
+  - itemKey: value
+---
+Default slot
+
+#secondary-slot
+
+Secondary slot value
+
+  :::hello
+  ---
+  key: value
+  ---
   :::
-::`)
+
+::
+`)
 const ast = useMarkdownParser(markdown, mdcOptions)
 const md = useMarkdownGenerator(ast, mdcOptions)
 </script>

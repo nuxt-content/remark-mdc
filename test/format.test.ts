@@ -243,6 +243,6 @@ attributes:
         // nested container should not be child of list item
         expect(ast.children[0].children.length).toBe(2)
       },
-    }
+    },
   })
 })

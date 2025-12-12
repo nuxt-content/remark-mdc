@@ -256,7 +256,7 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
       return factorySpace(effects, lineStartAfterPrefix, 'linePrefix', containerIndentSize + 1)(code)
     }
 
-    return effects.check({ tokenize: tokenizeContainerIndent, partial: true }, 
+    return effects.check({ tokenize: tokenizeContainerIndent, partial: true },
       dentendIndentedCommponent,
       lineStartAfterPrefix,
     )(code)
@@ -276,7 +276,6 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
 
     // After each empty line inside a container, we need to check for an indented component.
     possibleIndentedComponent = markdownLineEnding(code)
-
 
     return initialPrefix > 0
       ? factorySpace(effects, nextState, 'linePrefix', initialPrefix + 1)(code)
@@ -370,7 +369,7 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
 
   /**
    * @example
-   * 
+   *
    * ```markdown
    * ::container
    * - This is a list item.
@@ -380,11 +379,10 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
    *   :::
    * ::
    * ```
-
    */
   function tokenizeContainerIndent(effects: Effects, ok: State, nok: State) {
     let size = 0
-    function start (code: Code): State | undefined {
+    function start(code: Code): State | undefined {
       if (code !== Codes.space) {
         return nok(code)
       }

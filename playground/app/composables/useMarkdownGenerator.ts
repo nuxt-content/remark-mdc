@@ -7,7 +7,7 @@ process.env = process.env || {}
 
 function jsonParser(this: any) {
   this.Parser = function (root: any) {
-    return JSON.parse(root)
+    return root ? JSON.parse(root) : root
   }
 }
 export function useMarkdownGenerator(input: Ref<object>, mdcOptions = ref({})) {
@@ -32,10 +32,16 @@ export function useMarkdownGenerator(input: Ref<object>, mdcOptions = ref({})) {
     markdown.value = res
   }
 
-  watch(() => input.value, v => generate(v))
+  watch(() => input.value, (v) => {
+    if (v) {
+      generate(v)
+    }
+  })
   watch(() => mdcOptions.value, () => {
     _stream = null
-    generate(input.value)
+    if (input.value) {
+      generate(input.value)
+    }
   }, { deep: true })
 
   if (input.value) {

@@ -103,4 +103,8 @@ export const Codes = {
    * '}'
    */
   closingCurlyBracket: 125,
+  /**
+   * '~'
+   */
+  tilde: 126,
 }

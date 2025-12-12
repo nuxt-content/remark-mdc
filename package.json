@@ -68,7 +68,8 @@
     "remark-stringify": "^11.0.0",
     "remark-wiki-link": "^2.0.1",
     "unbuild": "^3.6.1",
-    "vitest": "latest"
+    "vitest": "latest",
+    "vue3-json-viewer": "^2.4.1"
   },
   "release-it": {
     "git": {

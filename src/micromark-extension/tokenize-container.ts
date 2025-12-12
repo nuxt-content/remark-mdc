@@ -21,6 +21,15 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
   let containerFirstLine = true
 
   /**
+   * After each empty line inside a container, we need to check for an indented component.
+   */
+  let possibleIndentedComponent = false
+  /**
+   * The size of the indent of the container. Related to the `possibleIndentedComponent`
+   */
+  let containerIndentSize = 0
+
+  /**
    * Show whether the current line is in the code fence or not.
    * Lines inside the code fence will not check for the slot separator and component end.
    */
@@ -235,14 +244,43 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
     return chunkStart(code)
   }
 
+  function dentendIndentedCommponent(code: Code): State | undefined {
+    if (containerIndentSize) {
+      return factorySpace(effects, lineStartAfterPrefix, 'linePrefix', containerIndentSize + 1)(code)
+    }
+    return lineStartAfterPrefix(code)
+  }
+
+  function attemptIntentedCommponent(code: Code): State | undefined {
+    if (containerIndentSize) {
+      return factorySpace(effects, lineStartAfterPrefix, 'linePrefix', containerIndentSize + 1)(code)
+    }
+
+    return effects.check({ tokenize: tokenizeContainerIndent, partial: true }, 
+      dentendIndentedCommponent,
+      lineStartAfterPrefix,
+    )(code)
+  }
+
   function lineStart(code: Code): State | undefined {
     if (code === null) {
       return after(code)
     }
 
-    return initialPrefix
-      ? factorySpace(effects, lineStartAfterPrefix, 'linePrefix', initialPrefix + 1)(code)
-      : lineStartAfterPrefix(code)
+    let nextState = dentendIndentedCommponent
+
+    // Check for an indented component if previous line was an empty line.
+    if (possibleIndentedComponent) {
+      nextState = attemptIntentedCommponent
+    }
+
+    // After each empty line inside a container, we need to check for an indented component.
+    possibleIndentedComponent = markdownLineEnding(code)
+
+
+    return initialPrefix > 0
+      ? factorySpace(effects, nextState, 'linePrefix', initialPrefix + 1)(code)
+      : nextState(code)
   }
 
   function chunkStart(code: Code): State | undefined {
@@ -305,7 +343,6 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
         size++
         return closingSequence
       }
-
       if (childContainersSequenceSize.length) {
         if (size === childContainersSequenceSize[childContainersSequenceSize.length - 1]) {
           childContainersSequenceSize.pop()
@@ -327,6 +364,54 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
         return ok(code)
       }
       childContainersSequenceSize.push(size)
+      return nok(code)
+    }
+  }
+
+  /**
+   * @example
+   * 
+   * ```markdown
+   * ::container
+   * - This is a list item.
+   *
+   *   ::indented-container
+   *   - This is a list item.
+   *   :::
+   * ::
+   * ```
+
+   */
+  function tokenizeContainerIndent(effects: Effects, ok: State, nok: State) {
+    let size = 0
+    function start (code: Code): State | undefined {
+      if (code !== Codes.space) {
+        return nok(code)
+      }
+      return factory(code)
+    }
+
+    function factory(code: Code): State | undefined {
+      effects.enter('linePrefix')
+      if (code === Codes.space) {
+        effects.consume(code)
+        size += 1
+        return factory
+      }
+      return containerCheck(code)
+    }
+    return start
+
+    function containerCheck(code: Code): State | undefined {
+      if (code === Codes.colon && size > 0) {
+        containerIndentSize = size
+        return ok(code)
+      }
+      if (markdownLineEnding(code)) {
+        possibleIndentedComponent = false
+        containerIndentSize = 0
+        return ok(code)
+      }
       return nok(code)
     }
   }

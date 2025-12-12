@@ -3079,10 +3079,10 @@ exports[`ul > list10 1`] = `
                 },
               },
               "rawData": "
-  background-image:
-    url: https://images.example.com/dog.png
-  color: red
-  ---",
+background-image:
+  url: https://images.example.com/dog.png
+color: red
+---",
               "type": "containerComponent",
             },
             {

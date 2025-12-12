@@ -107,7 +107,7 @@ function checkCodeFenced(effects: Effects, ok: State, nok: State) {
   }
 
   function after(code: Code): State | undefined {
-    if (code === Codes.backTick) {
+    if (code === Codes.backTick || code === Codes.tilde) {
       backTickCount++
       effects.consume(code)
       return after

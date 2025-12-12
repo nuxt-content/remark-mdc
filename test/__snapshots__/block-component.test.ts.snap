@@ -1545,8 +1545,8 @@ exports[`block-component > nested-component 1`] = `
                 },
               },
               "rawData": "
-  key: value
-  ---",
+key: value
+---",
               "type": "containerComponent",
             },
           ],

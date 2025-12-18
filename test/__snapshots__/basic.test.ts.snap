@@ -282,6 +282,81 @@ exports[`basic > link 1`] = `
 }
 `;
 
+exports[`basic > linkWithAmpersand 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "target": "_blank",
+          },
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 6,
+                  "line": 1,
+                  "offset": 5,
+                },
+                "start": {
+                  "column": 2,
+                  "line": 1,
+                  "offset": 1,
+                },
+              },
+              "type": "text",
+              "value": "link",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 74,
+              "line": 1,
+              "offset": 73,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "title": null,
+          "type": "link",
+          "url": "https://nuxtjs.org/?utm_source=benevolt&utm_campaign=mailingassos",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 91,
+          "line": 1,
+          "offset": 90,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 91,
+      "line": 1,
+      "offset": 90,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
 exports[`basic > remarkPluginName 1`] = `
 {
   "children": [],

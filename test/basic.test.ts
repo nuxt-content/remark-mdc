@@ -39,6 +39,14 @@ describe('basic', () => {
         '[link](https://nuxtjs.org){target="_blank"}',
       ].join('\n'),
     },
+    linkWithAmpersand: {
+      mdcOptions: {
+        experimental: {
+          autoUnwrap: true,
+        },
+      },
+      markdown: '[link](https://nuxtjs.org/?utm_source=benevolt&utm_campaign=mailingassos){target="_blank"}',
+    },
     li: {
       mdcOptions: {
         experimental: {

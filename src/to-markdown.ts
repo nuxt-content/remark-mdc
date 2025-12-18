@@ -339,7 +339,18 @@ export default (opts: RemarkMDCOptions = {}) => {
         return defaultHandlers.image(node as any, _, state, info) + attributes(node, state)
       },
       link: (node: Parents, _: any, state: State, info: Info) => {
-        return defaultHandlers.link(node as any, _, state, info) + attributes(node, state)
+        const andPattern = state.unsafe.find(pattern => pattern.character === '&')
+        const defaultNotInConstruct = andPattern?.notInConstruct || []
+        if (andPattern) {
+          // do not escape ampersand in destinationRaw(link url)
+          andPattern.notInConstruct = 'destinationRaw'
+        }
+
+        const result = defaultHandlers.link(node as any, _, state, info) + attributes(node, state)
+        if (andPattern) {
+          andPattern.notInConstruct = defaultNotInConstruct
+        }
+        return result
       },
       linkReference: (node: Parents, _: any, state: State, info: Info) => {
         return defaultHandlers.linkReference(node as any, _, state, info) + attributes(node, state)

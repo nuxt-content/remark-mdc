@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.10.0
+
+[compare changes](https://github.com/nuxt-content/remark-mdc/compare/v3.9.0...v3.10.0)
+
+### 🩹 Fixes
+
+- **syntax:** Nested component detection ([8c572cd](https://github.com/nuxt-content/remark-mdc/commit/8c572cd))
+- **link:** Do not escape `&` character inside link url ([f664ef9](https://github.com/nuxt-content/remark-mdc/commit/f664ef9))
+
+### 🏡 Chore
+
+- Upgrade deps ([242cabe](https://github.com/nuxt-content/remark-mdc/commit/242cabe))
+- Upgrade deps ([369e769](https://github.com/nuxt-content/remark-mdc/commit/369e769))
+- Upgrade deps ([f84d964](https://github.com/nuxt-content/remark-mdc/commit/f84d964))
+
+### ✅ Tests
+
+- Add extra test ([df727b3](https://github.com/nuxt-content/remark-mdc/commit/df727b3))
+
+### ❤️ Contributors
+
+- Farnabaz <farnabaz@gmail.com>
+
 ## v3.9.0
 
 [compare changes](https://github.com/nuxt-content/remark-mdc/compare/v3.8.1...v3.9.0)

@@ -62,7 +62,7 @@
     "eslint-plugin-nuxt": "latest",
     "jiti": "^2.6.1",
     "nuxt": "^4.2.2",
-    "release-it": "^19.2.1",
+    "release-it": "^19.2.2",
     "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
@@ -83,5 +83,5 @@
       "after:bump": "npx changelogen@latest --no-commit --no-tag --output --r $(node -p \"require('./package.json').version\")"
     }
   },
-  "packageManager": "pnpm@10.26.2"
+  "packageManager": "pnpm@10.27.0"
 }

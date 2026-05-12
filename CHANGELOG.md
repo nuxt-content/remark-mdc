@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.11.0
+
+[compare changes](https://github.com/nuxt-content/remark-mdc/compare/v3.10.0...v3.11.0)
+
+### 🩹 Fixes
+
+- Fenced code block indentation ([#143](https://github.com/nuxt-content/remark-mdc/pull/143))
+
+### 🏡 Chore
+
+- Upgrade deps ([34369fa](https://github.com/nuxt-content/remark-mdc/commit/34369fa))
+- Upgrade deps ([c062067](https://github.com/nuxt-content/remark-mdc/commit/c062067))
+
+### ❤️ Contributors
+
+- Farnabaz <farnabaz@gmail.com>
+- Adam DeHaven ([@adamdehaven](https://github.com/adamdehaven))
+
 ## v3.10.0
 
 [compare changes](https://github.com/nuxt-content/remark-mdc/compare/v3.9.0...v3.10.0)

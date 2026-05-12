@@ -36,7 +36,8 @@ try {
   container.children.forEach((child, i) => {
     console.log(`  ${i}: ${child.type}`, child.value ? `(${child.value.substring(0, 50)})` : '')
   })
-} catch (e) {
+}
+catch (e) {
   console.error('Error:', e.message)
 }
 
@@ -51,6 +52,7 @@ try {
   container.children.forEach((child, i) => {
     console.log(`  ${i}: ${child.type}`, child.value ? `(${child.value.substring(0, 50)})` : '')
   })
-} catch (e) {
+}
+catch (e) {
   console.error('Error:', e.message)
 }

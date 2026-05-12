@@ -236,6 +236,283 @@ describe('block-component', () => {
         'Third line',
       ].join('\n'),
     },
+    'ignore-code-fence-with-prior-indented-subcomponent': {
+      // Code fence at column 0 must NOT have its content indentation stripped,
+      // even when a prior indented sub-component set containerIndentSize > 0.
+      // The leading blank line after ::component is normalized away on stringify.
+      markdown: [
+        '::component',
+        '',
+        '  :::nested',
+        '  :::',
+        '',
+        '```json',
+        '{',
+        '  "key": "value"',
+        '}',
+        '```',
+        '::',
+      ].join('\n'),
+      expected: [
+        '::component',
+        '  :::nested',
+        '  :::',
+        '',
+        '```json',
+        '{',
+        '  "key": "value"',
+        '}',
+        '```',
+        '::',
+      ].join('\n'),
+      extra: (_md, ast) => {
+        const container = ast.children[0]
+        const codeNode = container.children[1]
+        expect(codeNode.type).toBe('code')
+        expect(codeNode.value).toBe('{\n  "key": "value"\n}')
+      },
+    },
+    'ignore-code-fence-with-prior-indented-subcomponent-blank-line': {
+      // Same as above but with a blank line immediately before the code fence,
+      // which triggers the `possibleIndentedComponent` / attemptIntentedCommponent path.
+      // The leading blank line after ::component is normalized away on stringify.
+      markdown: [
+        '::component',
+        '',
+        '  :::nested',
+        '  :::',
+        '',
+        'Some text',
+        '',
+        '```json',
+        '{',
+        '  "key": "value"',
+        '}',
+        '```',
+        '::',
+      ].join('\n'),
+      expected: [
+        '::component',
+        '  :::nested',
+        '  :::',
+        '',
+        'Some text',
+        '',
+        '```json',
+        '{',
+        '  "key": "value"',
+        '}',
+        '```',
+        '::',
+      ].join('\n'),
+      extra: (_md, ast) => {
+        const container = ast.children[0]
+        // children[0] = nested container, children[1] = paragraph, children[2] = code
+        const codeNode = container.children[2]
+        expect(codeNode.type).toBe('code')
+        expect(codeNode.value).toBe('{\n  "key": "value"\n}')
+      },
+    },
+    'indented-code-fence-with-prior-indented-subcomponent': {
+      // Code fence at containerIndentSize indent should still work correctly —
+      // spaces ARE stripped from the opening line, so content stripping applies too.
+      // The stringify round-trip normalizes the fence back to column 0.
+      markdown: [
+        '::component',
+        '',
+        '  :::nested',
+        '  :::',
+        '',
+        '  ```json',
+        '  {',
+        '    "key": "value"',
+        '  }',
+        '  ```',
+        '::',
+      ].join('\n'),
+      expected: [
+        '::component',
+        '  :::nested',
+        '  :::',
+        '',
+        '```json',
+        '{',
+        '  "key": "value"',
+        '}',
+        '```',
+        '::',
+      ].join('\n'),
+      extra: (_md, ast) => {
+        const container = ast.children[0]
+        const codeNode = container.children[1]
+        expect(codeNode.type).toBe('code')
+        expect(codeNode.value).toBe('{\n  "key": "value"\n}')
+      },
+    },
+    'tilde-code-fence-with-prior-indented-subcomponent': {
+      // Tilde-delimited fences must behave identically to backtick fences:
+      // content indentation must be preserved when the fence is at column 0.
+      markdown: [
+        '::component',
+        '',
+        '  :::nested',
+        '  :::',
+        '',
+        '~~~json',
+        '{',
+        '  "key": "value"',
+        '}',
+        '~~~',
+        '::',
+      ].join('\n'),
+      expected: [
+        '::component',
+        '  :::nested',
+        '  :::',
+        '',
+        '```json',
+        '{',
+        '  "key": "value"',
+        '}',
+        '```',
+        '::',
+      ].join('\n'),
+      extra: (_md, ast) => {
+        const container = ast.children[0]
+        const codeNode = container.children[1]
+        expect(codeNode.type).toBe('code')
+        expect(codeNode.value).toBe('{\n  "key": "value"\n}')
+      },
+    },
+    'tilde-code-fence-blank-line-before': {
+      // Same as tilde-code-fence-with-prior-indented-subcomponent but with a blank
+      // line before the fence, exercising the attemptIntentedCommponent path.
+      markdown: [
+        '::component',
+        '',
+        '  :::nested',
+        '  :::',
+        '',
+        'Some text',
+        '',
+        '~~~json',
+        '{',
+        '  "key": "value"',
+        '}',
+        '~~~',
+        '::',
+      ].join('\n'),
+      expected: [
+        '::component',
+        '  :::nested',
+        '  :::',
+        '',
+        'Some text',
+        '',
+        '```json',
+        '{',
+        '  "key": "value"',
+        '}',
+        '```',
+        '::',
+      ].join('\n'),
+      extra: (_md, ast) => {
+        const container = ast.children[0]
+        // children[0] = nested container, children[1] = paragraph, children[2] = code
+        const codeNode = container.children[2]
+        expect(codeNode.type).toBe('code')
+        expect(codeNode.value).toBe('{\n  "key": "value"\n}')
+      },
+    },
+    'two-code-fences-indented-then-column-zero': {
+      // Second fence (column 0) must not inherit codeFenceStripped from the first
+      // fence (indented), which would incorrectly strip its content indentation.
+      markdown: [
+        '::component',
+        '',
+        '  :::nested',
+        '  :::',
+        '',
+        '  ```json',
+        '  { "first": true }',
+        '  ```',
+        '',
+        '```json',
+        '{',
+        '  "second": true',
+        '}',
+        '```',
+        '::',
+      ].join('\n'),
+      expected: [
+        '::component',
+        '  :::nested',
+        '  :::',
+        '',
+        '```json',
+        '{ "first": true }',
+        '```',
+        '',
+        '```json',
+        '{',
+        '  "second": true',
+        '}',
+        '```',
+        '::',
+      ].join('\n'),
+      extra: (_md, ast) => {
+        const container = ast.children[0]
+        // children[0]=nested, children[1]=first code, children[2]=second code
+        expect(container.children[1].type).toBe('code')
+        expect(container.children[1].value).toBe('{ "first": true }')
+        expect(container.children[2].type).toBe('code')
+        expect(container.children[2].value).toBe('{\n  "second": true\n}')
+      },
+    },
+    'two-code-fences-column-zero-then-indented': {
+      // Reverse order: column-0 fence first, then indented fence. The indented fence
+      // must still have its content stripped correctly.
+      markdown: [
+        '::component',
+        '',
+        '  :::nested',
+        '  :::',
+        '',
+        '```json',
+        '{',
+        '  "first": true',
+        '}',
+        '```',
+        '',
+        '  ```json',
+        '  { "second": true }',
+        '  ```',
+        '::',
+      ].join('\n'),
+      expected: [
+        '::component',
+        '  :::nested',
+        '  :::',
+        '',
+        '```json',
+        '{',
+        '  "first": true',
+        '}',
+        '```',
+        '',
+        '```json',
+        '{ "second": true }',
+        '```',
+        '::',
+      ].join('\n'),
+      extra: (_md, ast) => {
+        const container = ast.children[0]
+        expect(container.children[1].type).toBe('code')
+        expect(container.children[1].value).toBe('{\n  "first": true\n}')
+        expect(container.children[2].type).toBe('code')
+        expect(container.children[2].value).toBe('{ "second": true }')
+      },
+    },
     'dangling-list': {
       markdown: [
         '::component',

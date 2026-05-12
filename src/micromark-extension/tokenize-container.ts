@@ -35,6 +35,15 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
    */
   let visitingCodeFenced = false
 
+  /**
+   * Whether the currently-open code fence was opened after `containerIndentSize` spaces
+   * were stripped from its opening line. When `true`, the same stripping applies to
+   * content lines inside the fence. When `false`, either no fence is open or the open
+   * fence was at column 0 (no stripping applied), so content lines must NOT be stripped.
+   * Reset to `false` each time a fence closes.
+   */
+  let codeFenceStripped = false
+
   const section = useTokenState('componentContainerSection')
 
   /**
@@ -205,11 +214,15 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
       return after(code)
     }
 
-    // Check for code fence
-    if (code === Codes.backTick) {
+    // Check for code fence (backtick or tilde delimiters)
+    if (code === Codes.backTick || code === Codes.tilde) {
       return effects.check(
         tokenizeCodeFence,
         (code) => {
+          if (visitingCodeFenced) {
+            // Fence is closing; reset so the next fence starts fresh.
+            codeFenceStripped = false
+          }
           visitingCodeFenced = !visitingCodeFenced
           return chunkStart(code)
         },
@@ -246,14 +259,44 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
 
   function dentendIndentedCommponent(code: Code): State | undefined {
     if (containerIndentSize) {
-      return factorySpace(effects, lineStartAfterPrefix, 'linePrefix', containerIndentSize + 1)(code)
+      // Inside a code fence opened without stripping (at column 0): skip stripping
+      // so that genuine code indentation is preserved.
+      if (visitingCodeFenced && !codeFenceStripped) {
+        return lineStartAfterPrefix(code)
+      }
+      const checkpoint = self.events.length
+      return factorySpace(effects, (code2: Code) => {
+        // When opening a new fence, record whether containerIndentSize spaces were
+        // fully stripped from its opening line. Slice from checkpoint so only the
+        // spaces consumed by this factorySpace call are counted, not any outer
+        // linePrefix tokens already on the event stream from lineStart.
+        if ((code2 === Codes.backTick || code2 === Codes.tilde) && !visitingCodeFenced) {
+          codeFenceStripped = linePrefixSize(self.events.slice(checkpoint)) >= containerIndentSize
+        }
+        return lineStartAfterPrefix(code2)
+      }, 'linePrefix', containerIndentSize + 1)(code)
     }
     return lineStartAfterPrefix(code)
   }
 
   function attemptIntentedCommponent(code: Code): State | undefined {
     if (containerIndentSize) {
-      return factorySpace(effects, lineStartAfterPrefix, 'linePrefix', containerIndentSize + 1)(code)
+      // Inside a code fence opened without stripping (at column 0): skip stripping.
+      if (visitingCodeFenced && !codeFenceStripped) {
+        return lineStartAfterPrefix(code)
+      }
+      const checkpoint = self.events.length
+      return factorySpace(effects, (code2: Code) => {
+        if ((code2 === Codes.backTick || code2 === Codes.tilde) && !visitingCodeFenced) {
+          codeFenceStripped = linePrefixSize(self.events.slice(checkpoint)) >= containerIndentSize
+        }
+        return lineStartAfterPrefix(code2)
+      }, 'linePrefix', containerIndentSize + 1)(code)
+    }
+    // When containerIndentSize is 0 and inside a code fence, bypass the indented-component
+    // check — fence content must never trigger sub-component detection.
+    if (visitingCodeFenced) {
+      return lineStartAfterPrefix(code)
     }
 
     return effects.check({ tokenize: tokenizeContainerIndent, partial: true },

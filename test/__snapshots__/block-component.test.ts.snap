@@ -1397,6 +1397,300 @@ exports[`block-component > ignore-code-fence 1`] = `
 }
 `;
 
+exports[`block-component > ignore-code-fence-with-prior-indented-subcomponent 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "attributes": {},
+          "children": [],
+          "data": {
+            "hName": "nested",
+            "hProperties": {},
+          },
+          "fmAttributes": {},
+          "name": "nested",
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 4,
+              "offset": 30,
+            },
+            "start": {
+              "column": 3,
+              "line": 3,
+              "offset": 15,
+            },
+          },
+          "type": "containerComponent",
+        },
+        {
+          "lang": "json",
+          "meta": null,
+          "position": {
+            "end": {
+              "column": 4,
+              "line": 10,
+              "offset": 64,
+            },
+            "start": {
+              "column": 1,
+              "line": 6,
+              "offset": 32,
+            },
+          },
+          "type": "code",
+          "value": "{
+  "key": "value"
+}",
+        },
+      ],
+      "data": {
+        "hName": "component",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "component",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 11,
+          "offset": 67,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 11,
+      "offset": 67,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block-component > ignore-code-fence-with-prior-indented-subcomponent-blank-line 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "attributes": {},
+          "children": [],
+          "data": {
+            "hName": "nested",
+            "hProperties": {},
+          },
+          "fmAttributes": {},
+          "name": "nested",
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 4,
+              "offset": 30,
+            },
+            "start": {
+              "column": 3,
+              "line": 3,
+              "offset": 15,
+            },
+          },
+          "type": "containerComponent",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 10,
+                  "line": 6,
+                  "offset": 41,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 6,
+                  "offset": 32,
+                },
+              },
+              "type": "text",
+              "value": "Some text",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 10,
+              "line": 6,
+              "offset": 41,
+            },
+            "start": {
+              "column": 1,
+              "line": 6,
+              "offset": 32,
+            },
+          },
+          "type": "paragraph",
+        },
+        {
+          "lang": "json",
+          "meta": null,
+          "position": {
+            "end": {
+              "column": 4,
+              "line": 12,
+              "offset": 75,
+            },
+            "start": {
+              "column": 1,
+              "line": 8,
+              "offset": 43,
+            },
+          },
+          "type": "code",
+          "value": "{
+  "key": "value"
+}",
+        },
+      ],
+      "data": {
+        "hName": "component",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "component",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 13,
+          "offset": 78,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 13,
+      "offset": 78,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block-component > indented-code-fence-with-prior-indented-subcomponent 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "attributes": {},
+          "children": [],
+          "data": {
+            "hName": "nested",
+            "hProperties": {},
+          },
+          "fmAttributes": {},
+          "name": "nested",
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 4,
+              "offset": 30,
+            },
+            "start": {
+              "column": 3,
+              "line": 3,
+              "offset": 15,
+            },
+          },
+          "type": "containerComponent",
+        },
+        {
+          "lang": "json",
+          "meta": null,
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 10,
+              "offset": 74,
+            },
+            "start": {
+              "column": 3,
+              "line": 6,
+              "offset": 34,
+            },
+          },
+          "type": "code",
+          "value": "{
+  "key": "value"
+}",
+        },
+      ],
+      "data": {
+        "hName": "component",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "component",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 11,
+          "offset": 77,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 11,
+      "offset": 77,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
 exports[`block-component > jsonScapeAttr 1`] = `
 {
   "children": [
@@ -2817,6 +3111,213 @@ exports[`block-component > text 1`] = `
 }
 `;
 
+exports[`block-component > tilde-code-fence-blank-line-before 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "attributes": {},
+          "children": [],
+          "data": {
+            "hName": "nested",
+            "hProperties": {},
+          },
+          "fmAttributes": {},
+          "name": "nested",
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 4,
+              "offset": 30,
+            },
+            "start": {
+              "column": 3,
+              "line": 3,
+              "offset": 15,
+            },
+          },
+          "type": "containerComponent",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 10,
+                  "line": 6,
+                  "offset": 41,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 6,
+                  "offset": 32,
+                },
+              },
+              "type": "text",
+              "value": "Some text",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 10,
+              "line": 6,
+              "offset": 41,
+            },
+            "start": {
+              "column": 1,
+              "line": 6,
+              "offset": 32,
+            },
+          },
+          "type": "paragraph",
+        },
+        {
+          "lang": "json",
+          "meta": null,
+          "position": {
+            "end": {
+              "column": 4,
+              "line": 12,
+              "offset": 75,
+            },
+            "start": {
+              "column": 1,
+              "line": 8,
+              "offset": 43,
+            },
+          },
+          "type": "code",
+          "value": "{
+  "key": "value"
+}",
+        },
+      ],
+      "data": {
+        "hName": "component",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "component",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 13,
+          "offset": 78,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 13,
+      "offset": 78,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block-component > tilde-code-fence-with-prior-indented-subcomponent 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "attributes": {},
+          "children": [],
+          "data": {
+            "hName": "nested",
+            "hProperties": {},
+          },
+          "fmAttributes": {},
+          "name": "nested",
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 4,
+              "offset": 30,
+            },
+            "start": {
+              "column": 3,
+              "line": 3,
+              "offset": 15,
+            },
+          },
+          "type": "containerComponent",
+        },
+        {
+          "lang": "json",
+          "meta": null,
+          "position": {
+            "end": {
+              "column": 4,
+              "line": 10,
+              "offset": 64,
+            },
+            "start": {
+              "column": 1,
+              "line": 6,
+              "offset": 32,
+            },
+          },
+          "type": "code",
+          "value": "{
+  "key": "value"
+}",
+        },
+      ],
+      "data": {
+        "hName": "component",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "component",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 11,
+          "offset": 67,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 11,
+      "offset": 67,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
 exports[`block-component > trim-slot-name 1`] = `
 {
   "children": [
@@ -2908,6 +3409,216 @@ exports[`block-component > trim-slot-name 1`] = `
       "column": 3,
       "line": 4,
       "offset": 34,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block-component > two-code-fences-column-zero-then-indented 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "attributes": {},
+          "children": [],
+          "data": {
+            "hName": "nested",
+            "hProperties": {},
+          },
+          "fmAttributes": {},
+          "name": "nested",
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 4,
+              "offset": 30,
+            },
+            "start": {
+              "column": 3,
+              "line": 3,
+              "offset": 15,
+            },
+          },
+          "type": "containerComponent",
+        },
+        {
+          "lang": "json",
+          "meta": null,
+          "position": {
+            "end": {
+              "column": 4,
+              "line": 10,
+              "offset": 63,
+            },
+            "start": {
+              "column": 1,
+              "line": 6,
+              "offset": 32,
+            },
+          },
+          "type": "code",
+          "value": "{
+  "first": true
+}",
+        },
+        {
+          "lang": "json",
+          "meta": null,
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 14,
+              "offset": 101,
+            },
+            "start": {
+              "column": 3,
+              "line": 12,
+              "offset": 67,
+            },
+          },
+          "type": "code",
+          "value": "{ "second": true }",
+        },
+      ],
+      "data": {
+        "hName": "component",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "component",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 15,
+          "offset": 104,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 15,
+      "offset": 104,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block-component > two-code-fences-indented-then-column-zero 1`] = `
+{
+  "children": [
+    {
+      "attributes": {},
+      "children": [
+        {
+          "attributes": {},
+          "children": [],
+          "data": {
+            "hName": "nested",
+            "hProperties": {},
+          },
+          "fmAttributes": {},
+          "name": "nested",
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 4,
+              "offset": 30,
+            },
+            "start": {
+              "column": 3,
+              "line": 3,
+              "offset": 15,
+            },
+          },
+          "type": "containerComponent",
+        },
+        {
+          "lang": "json",
+          "meta": null,
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 8,
+              "offset": 67,
+            },
+            "start": {
+              "column": 3,
+              "line": 6,
+              "offset": 34,
+            },
+          },
+          "type": "code",
+          "value": "{ "first": true }",
+        },
+        {
+          "lang": "json",
+          "meta": null,
+          "position": {
+            "end": {
+              "column": 4,
+              "line": 14,
+              "offset": 101,
+            },
+            "start": {
+              "column": 1,
+              "line": 10,
+              "offset": 69,
+            },
+          },
+          "type": "code",
+          "value": "{
+  "second": true
+}",
+        },
+      ],
+      "data": {
+        "hName": "component",
+        "hProperties": {},
+      },
+      "fmAttributes": {},
+      "name": "component",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 15,
+          "offset": 104,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 15,
+      "offset": 104,
     },
     "start": {
       "column": 1,

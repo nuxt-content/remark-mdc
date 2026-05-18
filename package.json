@@ -83,5 +83,5 @@
       "after:bump": "npx changelogen@latest --no-commit --no-tag --output --r $(node -p \"require('./package.json').version\")"
     }
   },
-  "packageManager": "pnpm@10.26.2"
+  "packageManager": "pnpm@11.1.3"
 }

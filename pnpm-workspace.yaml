@@ -2,8 +2,9 @@ packages:
   - ./
   - playground
 
-onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - esbuild
-  - unrs-resolver
-  - vue-demi
+allowBuilds:
+  '@parcel/watcher': false
+  '@tailwindcss/oxide': true
+  esbuild: true
+  unrs-resolver: true
+  vue-demi: true

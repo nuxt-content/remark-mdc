@@ -2,6 +2,9 @@ packages:
   - ./
   - playground
 
+shamefullyHoist: true
+strictPeerDependencies: false
+
 allowBuilds:
   '@parcel/watcher': false
   '@tailwindcss/oxide': true

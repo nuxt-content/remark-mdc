@@ -109,7 +109,8 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
   }
 
   function sectionOpen(code: Code): undefined | State {
-    // Open new Section
+    // Open new Section — reset chunk link so each slot gets its own document context.
+    previous = undefined
     section.enter(effects)
 
     if (markdownLineEnding(code)) {

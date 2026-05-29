@@ -524,6 +524,45 @@ describe('block-component', () => {
         '::',
       ].join('\n'),
     },
+    'multiple-slots-with-lists': {
+      markdown: [
+        '::component',
+        '',
+        '#slot-a',
+        '- item one',
+        '- item two',
+        '- item three',
+        '',
+        '#slot-b',
+        '- item one',
+        '- item two',
+        '- item three',
+        '',
+        '::',
+      ].join('\n'),
+      expected: [
+        '::component',
+        '#slot-a',
+        '- item one',
+        '- item two',
+        '- item three',
+        '',
+        '#slot-b',
+        '- item one',
+        '- item two',
+        '- item three',
+        '::',
+      ].join('\n'),
+      extra(_md, ast) {
+        const container = ast.children[0]
+        const slotA = container.children.find((c: any) => c.name === 'slot-a')
+        const slotB = container.children.find((c: any) => c.name === 'slot-b')
+        expect(slotA.children[0].type).toBe('list')
+        expect(slotB.children[0].type).toBe('list')
+        expect(slotA.children[0].children).toHaveLength(3)
+        expect(slotB.children[0].children).toHaveLength(3)
+      },
+    },
     'trim-slot-name': {
       markdown: [
         '::component',

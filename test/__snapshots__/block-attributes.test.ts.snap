@@ -1,0 +1,1852 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`block attributes > blockquote 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "attr": "value",
+          },
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 14,
+                  "line": 1,
+                  "offset": 13,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+              },
+              "type": "text",
+              "value": "Blockquote",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 28,
+              "line": 1,
+              "offset": 27,
+            },
+            "start": {
+              "column": 3,
+              "line": 1,
+              "offset": 2,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 28,
+          "line": 1,
+          "offset": 27,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "blockquote",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 28,
+      "line": 1,
+      "offset": 27,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block attributes > blockquote multiple paragraphs 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "attr": "value",
+          },
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 10,
+                  "line": 1,
+                  "offset": 9,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+              },
+              "type": "text",
+              "value": "Para 1",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 24,
+              "line": 1,
+              "offset": 23,
+            },
+            "start": {
+              "column": 3,
+              "line": 1,
+              "offset": 2,
+            },
+          },
+          "type": "paragraph",
+        },
+        {
+          "attributes": {
+            "attr2": "value2",
+          },
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 10,
+                  "line": 3,
+                  "offset": 35,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 3,
+                  "offset": 28,
+                },
+              },
+              "type": "text",
+              "value": "Para 2",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 26,
+              "line": 3,
+              "offset": 51,
+            },
+            "start": {
+              "column": 3,
+              "line": 3,
+              "offset": 28,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 26,
+          "line": 3,
+          "offset": 51,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "blockquote",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 26,
+      "line": 3,
+      "offset": 51,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block attributes > bullet list items 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "attr": "value",
+          },
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 15,
+                      "line": 1,
+                      "offset": 14,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 1,
+                      "offset": 2,
+                    },
+                  },
+                  "type": "text",
+                  "value": "a list item",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 29,
+                  "line": 1,
+                  "offset": 28,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 29,
+              "line": 1,
+              "offset": 28,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+        {
+          "attributes": {
+            "attr2": "value2",
+          },
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 21,
+                      "line": 2,
+                      "offset": 49,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 2,
+                      "offset": 31,
+                    },
+                  },
+                  "type": "text",
+                  "value": "another list item",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 37,
+                  "line": 2,
+                  "offset": 65,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 31,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 37,
+              "line": 2,
+              "offset": 65,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 29,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "position": {
+        "end": {
+          "column": 37,
+          "line": 2,
+          "offset": 65,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "spread": false,
+      "start": null,
+      "type": "list",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 37,
+      "line": 2,
+      "offset": 65,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block attributes > heading h1 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "attr": "value",
+      },
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 6,
+              "line": 1,
+              "offset": 5,
+            },
+            "start": {
+              "column": 3,
+              "line": 1,
+              "offset": 2,
+            },
+          },
+          "type": "text",
+          "value": "h1",
+        },
+      ],
+      "depth": 1,
+      "position": {
+        "end": {
+          "column": 20,
+          "line": 1,
+          "offset": 19,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "heading",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 20,
+      "line": 1,
+      "offset": 19,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block attributes > heading h6 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "attr": "value",
+      },
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 11,
+              "line": 1,
+              "offset": 10,
+            },
+            "start": {
+              "column": 8,
+              "line": 1,
+              "offset": 7,
+            },
+          },
+          "type": "text",
+          "value": "h6",
+        },
+      ],
+      "depth": 6,
+      "position": {
+        "end": {
+          "column": 25,
+          "line": 1,
+          "offset": 24,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "heading",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 25,
+      "line": 1,
+      "offset": 24,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block attributes > keeps attaching to inline element 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "attr": "value",
+          },
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 7,
+                  "line": 1,
+                  "offset": 6,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+              },
+              "type": "text",
+              "value": "bold",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 9,
+              "line": 1,
+              "offset": 8,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "strong",
+        },
+        {
+          "position": {
+            "end": {
+              "column": 32,
+              "line": 1,
+              "offset": 31,
+            },
+            "start": {
+              "column": 23,
+              "line": 1,
+              "offset": 22,
+            },
+          },
+          "type": "text",
+          "value": " and more",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 32,
+          "line": 1,
+          "offset": 31,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 32,
+      "line": 1,
+      "offset": 31,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block attributes > lifts attributes onto unwrapped container 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "attr": "value",
+      },
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 7,
+              "line": 2,
+              "offset": 13,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 7,
+            },
+          },
+          "type": "text",
+          "value": "Hello",
+        },
+      ],
+      "data": {
+        "hName": "test",
+        "hProperties": {
+          "attr": "value",
+        },
+      },
+      "fmAttributes": {},
+      "name": "test",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 3,
+          "offset": 30,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 3,
+      "offset": 30,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block attributes > non-trailing attributes stay literal 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 16,
+              "line": 1,
+              "offset": 15,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "A {x} paragraph",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 16,
+          "line": 1,
+          "offset": 15,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 16,
+      "line": 1,
+      "offset": 15,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block attributes > ordered list item 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "attr": "value",
+          },
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 14,
+                      "line": 1,
+                      "offset": 13,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 1,
+                      "offset": 3,
+                    },
+                  },
+                  "type": "text",
+                  "value": "List item",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 28,
+                  "line": 1,
+                  "offset": 27,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 1,
+                  "offset": 3,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 28,
+              "line": 1,
+              "offset": 27,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": true,
+      "position": {
+        "end": {
+          "column": 28,
+          "line": 1,
+          "offset": 27,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "spread": false,
+      "start": 1,
+      "type": "list",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 28,
+      "line": 1,
+      "offset": 27,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block attributes > paragraph 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "attr": "value",
+      },
+      "children": [
+        {
+          "position": {
+            "end": {
+              "column": 13,
+              "line": 1,
+              "offset": 12,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "A paragraph",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 27,
+          "line": 1,
+          "offset": 26,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 27,
+      "line": 1,
+      "offset": 26,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block attributes > task list items 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "attributes": {
+            "attr": "value",
+          },
+          "checked": false,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 22,
+                      "line": 1,
+                      "offset": 21,
+                    },
+                    "start": {
+                      "column": 7,
+                      "line": 1,
+                      "offset": 6,
+                    },
+                  },
+                  "type": "text",
+                  "value": "Task list item",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 36,
+                  "line": 1,
+                  "offset": 35,
+                },
+                "start": {
+                  "column": 7,
+                  "line": 1,
+                  "offset": 6,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 36,
+              "line": 1,
+              "offset": 35,
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+        {
+          "attributes": {
+            "attr2": "value2",
+          },
+          "checked": true,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 22,
+                      "line": 2,
+                      "offset": 57,
+                    },
+                    "start": {
+                      "column": 7,
+                      "line": 2,
+                      "offset": 42,
+                    },
+                  },
+                  "type": "text",
+                  "value": "Task list item",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 38,
+                  "line": 2,
+                  "offset": 73,
+                },
+                "start": {
+                  "column": 7,
+                  "line": 2,
+                  "offset": 42,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 38,
+              "line": 2,
+              "offset": 73,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 36,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "position": {
+        "end": {
+          "column": 38,
+          "line": 2,
+          "offset": 73,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "spread": false,
+      "start": null,
+      "type": "list",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 38,
+      "line": 2,
+      "offset": 73,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block component fold > blockquote multi-block uses wrapper 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "attr": "value",
+      },
+      "children": [
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 4,
+                  "line": 2,
+                  "offset": 30,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 29,
+                },
+              },
+              "type": "text",
+              "value": "a",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 4,
+              "line": 2,
+              "offset": 30,
+            },
+            "start": {
+              "column": 3,
+              "line": 2,
+              "offset": 29,
+            },
+          },
+          "type": "paragraph",
+        },
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 4,
+                  "line": 4,
+                  "offset": 36,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 4,
+                  "offset": 35,
+                },
+              },
+              "type": "text",
+              "value": "b",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 4,
+              "line": 4,
+              "offset": 36,
+            },
+            "start": {
+              "column": 3,
+              "line": 4,
+              "offset": 35,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 4,
+          "line": 4,
+          "offset": 36,
+        },
+        "start": {
+          "column": 1,
+          "line": 2,
+          "offset": 27,
+        },
+      },
+      "type": "blockquote",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 5,
+      "offset": 39,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block component fold > blockquote single-content uses natural form 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "attr": "value",
+      },
+      "children": [
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 4,
+                  "line": 2,
+                  "offset": 30,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 29,
+                },
+              },
+              "type": "text",
+              "value": "a",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 4,
+              "line": 2,
+              "offset": 30,
+            },
+            "start": {
+              "column": 3,
+              "line": 2,
+              "offset": 29,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 4,
+          "line": 2,
+          "offset": 30,
+        },
+        "start": {
+          "column": 1,
+          "line": 2,
+          "offset": 27,
+        },
+      },
+      "type": "blockquote",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 3,
+      "offset": 33,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block component fold > no fold when tags differ 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "attr": "value",
+      },
+      "children": [
+        {
+          "children": [
+            {
+              "checked": null,
+              "children": [
+                {
+                  "children": [
+                    {
+                      "position": {
+                        "end": {
+                          "column": 8,
+                          "line": 2,
+                          "offset": 26,
+                        },
+                        "start": {
+                          "column": 4,
+                          "line": 2,
+                          "offset": 22,
+                        },
+                      },
+                      "type": "text",
+                      "value": "item",
+                    },
+                  ],
+                  "position": {
+                    "end": {
+                      "column": 8,
+                      "line": 2,
+                      "offset": 26,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 2,
+                      "offset": 22,
+                    },
+                  },
+                  "type": "paragraph",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 8,
+                  "line": 2,
+                  "offset": 26,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 2,
+                  "offset": 19,
+                },
+              },
+              "spread": false,
+              "type": "listItem",
+            },
+          ],
+          "ordered": true,
+          "position": {
+            "end": {
+              "column": 8,
+              "line": 2,
+              "offset": 26,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 19,
+            },
+          },
+          "spread": false,
+          "start": 1,
+          "type": "list",
+        },
+      ],
+      "data": {
+        "hName": "ul",
+        "hProperties": {
+          "attr": "value",
+        },
+      },
+      "fmAttributes": {},
+      "name": "ul",
+      "position": {
+        "end": {
+          "column": 3,
+          "line": 3,
+          "offset": 29,
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "containerComponent",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 3,
+      "offset": 29,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block component fold > ol 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "attr": "value",
+      },
+      "children": [
+        {
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 10,
+                      "line": 2,
+                      "offset": 28,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 2,
+                      "offset": 22,
+                    },
+                  },
+                  "type": "text",
+                  "value": "item 1",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 10,
+                  "line": 2,
+                  "offset": 28,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 2,
+                  "offset": 22,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 10,
+              "line": 2,
+              "offset": 28,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 19,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+        {
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 10,
+                      "line": 3,
+                      "offset": 38,
+                    },
+                    "start": {
+                      "column": 4,
+                      "line": 3,
+                      "offset": 32,
+                    },
+                  },
+                  "type": "text",
+                  "value": "item 2",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 10,
+                  "line": 3,
+                  "offset": 38,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 3,
+                  "offset": 32,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 10,
+              "line": 3,
+              "offset": 38,
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 29,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": true,
+      "position": {
+        "end": {
+          "column": 10,
+          "line": 3,
+          "offset": 38,
+        },
+        "start": {
+          "column": 1,
+          "line": 2,
+          "offset": 19,
+        },
+      },
+      "spread": false,
+      "start": 1,
+      "type": "list",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 4,
+      "offset": 41,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block component fold > outer attributes win over inner 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "attr": "outer",
+      },
+      "children": [
+        {
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 7,
+                      "line": 2,
+                      "offset": 25,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 2,
+                      "offset": 21,
+                    },
+                  },
+                  "type": "text",
+                  "value": "item",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 7,
+                  "line": 2,
+                  "offset": 25,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 21,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 7,
+              "line": 2,
+              "offset": 25,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 19,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "position": {
+        "end": {
+          "column": 7,
+          "line": 2,
+          "offset": 25,
+        },
+        "start": {
+          "column": 1,
+          "line": 2,
+          "offset": 19,
+        },
+      },
+      "spread": false,
+      "start": null,
+      "type": "list",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 3,
+      "offset": 28,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block component fold > table 1`] = `
+{
+  "children": [
+    {
+      "align": [
+        null,
+        null,
+      ],
+      "attributes": {
+        "attr": "value",
+      },
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 4,
+                      "line": 2,
+                      "offset": 25,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 2,
+                      "offset": 24,
+                    },
+                  },
+                  "type": "text",
+                  "value": "a",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 5,
+                  "line": 2,
+                  "offset": 26,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 2,
+                  "offset": 22,
+                },
+              },
+              "type": "tableCell",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 8,
+                      "line": 2,
+                      "offset": 29,
+                    },
+                    "start": {
+                      "column": 7,
+                      "line": 2,
+                      "offset": 28,
+                    },
+                  },
+                  "type": "text",
+                  "value": "b",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 10,
+                  "line": 2,
+                  "offset": 31,
+                },
+                "start": {
+                  "column": 5,
+                  "line": 2,
+                  "offset": 26,
+                },
+              },
+              "type": "tableCell",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 10,
+              "line": 2,
+              "offset": 31,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 22,
+            },
+          },
+          "type": "tableRow",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 4,
+                      "line": 4,
+                      "offset": 45,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 4,
+                      "offset": 44,
+                    },
+                  },
+                  "type": "text",
+                  "value": "1",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 5,
+                  "line": 4,
+                  "offset": 46,
+                },
+                "start": {
+                  "column": 1,
+                  "line": 4,
+                  "offset": 42,
+                },
+              },
+              "type": "tableCell",
+            },
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 8,
+                      "line": 4,
+                      "offset": 49,
+                    },
+                    "start": {
+                      "column": 7,
+                      "line": 4,
+                      "offset": 48,
+                    },
+                  },
+                  "type": "text",
+                  "value": "2",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 10,
+                  "line": 4,
+                  "offset": 51,
+                },
+                "start": {
+                  "column": 5,
+                  "line": 4,
+                  "offset": 46,
+                },
+              },
+              "type": "tableCell",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 10,
+              "line": 4,
+              "offset": 51,
+            },
+            "start": {
+              "column": 1,
+              "line": 4,
+              "offset": 42,
+            },
+          },
+          "type": "tableRow",
+        },
+      ],
+      "position": {
+        "end": {
+          "column": 10,
+          "line": 4,
+          "offset": 51,
+        },
+        "start": {
+          "column": 1,
+          "line": 2,
+          "offset": 22,
+        },
+      },
+      "type": "table",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 5,
+      "offset": 54,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;
+
+exports[`block component fold > ul 1`] = `
+{
+  "children": [
+    {
+      "attributes": {
+        "attr": "value",
+      },
+      "children": [
+        {
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 9,
+                      "line": 2,
+                      "offset": 27,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 2,
+                      "offset": 21,
+                    },
+                  },
+                  "type": "text",
+                  "value": "item 1",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 9,
+                  "line": 2,
+                  "offset": 27,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 21,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 9,
+              "line": 2,
+              "offset": 27,
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 19,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+        {
+          "checked": null,
+          "children": [
+            {
+              "children": [
+                {
+                  "position": {
+                    "end": {
+                      "column": 9,
+                      "line": 3,
+                      "offset": 36,
+                    },
+                    "start": {
+                      "column": 3,
+                      "line": 3,
+                      "offset": 30,
+                    },
+                  },
+                  "type": "text",
+                  "value": "item 2",
+                },
+              ],
+              "position": {
+                "end": {
+                  "column": 9,
+                  "line": 3,
+                  "offset": 36,
+                },
+                "start": {
+                  "column": 3,
+                  "line": 3,
+                  "offset": 30,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": {
+            "end": {
+              "column": 9,
+              "line": 3,
+              "offset": 36,
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 28,
+            },
+          },
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "position": {
+        "end": {
+          "column": 9,
+          "line": 3,
+          "offset": 36,
+        },
+        "start": {
+          "column": 1,
+          "line": 2,
+          "offset": 19,
+        },
+      },
+      "spread": false,
+      "start": null,
+      "type": "list",
+    },
+  ],
+  "position": {
+    "end": {
+      "column": 3,
+      "line": 4,
+      "offset": 39,
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;

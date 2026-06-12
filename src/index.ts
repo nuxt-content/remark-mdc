@@ -51,7 +51,28 @@ export default <Plugin<Array<RemarkMDCOptions>>> function remarkMDC(opts: Remark
 
   add('micromarkExtensions', syntax())
   add('fromMarkdownExtensions', fromMarkdown(opts))
-  add('toMarkdownExtensions', toMarkdown(opts))
+  // Capture `table` / `listItem` serializers from extensions registered before
+  // us (e.g. remark-gfm) so we can compose with them when emitting block-level
+  // attributes instead of clobbering their output.
+  const findToMarkdownHandler = (name: string, extensions: any = data['toMarkdownExtensions'], seen = new Set()): any => {
+    for (const ext of ([] as any[]).concat(extensions || [])) {
+      if (!ext || typeof ext !== 'object' || seen.has(ext)) {
+        continue
+      }
+      seen.add(ext)
+      if (ext.handlers?.[name]) {
+        return ext.handlers[name]
+      }
+      const nested = findToMarkdownHandler(name, ext.extensions, seen)
+      if (nested) {
+        return nested
+      }
+    }
+  }
+  add('toMarkdownExtensions', toMarkdown(opts, {
+    table: findToMarkdownHandler('table'),
+    listItem: findToMarkdownHandler('listItem'),
+  }))
 
   function add(field: string, value: any) {
     /* istanbul ignore if - other extensions. */

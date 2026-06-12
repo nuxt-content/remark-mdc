@@ -46,6 +46,15 @@ export default (opts: RemarkMDCOptions = {}) => {
       return
     }
 
+    // Lift the unwrapped paragraph's trailing attributes onto the parent so
+    // they survive the paragraph being removed. Parent attributes win.
+    if ((child as any).attributes && Object.keys((child as any).attributes).length) {
+      (node as any).attributes = {
+        ...(child as any).attributes,
+        ...((node as any).attributes || {}),
+      }
+    }
+
     const childIndex = node.children.indexOf(child)
 
     node.children.splice(childIndex, 1, ...((child as Container)?.children || []))
@@ -156,6 +165,14 @@ export default (opts: RemarkMDCOptions = {}) => {
           container.mdc = container.mdc || {}
           container.mdc.unwrapped = child.mdc?.unwrapped
         }
+        // Lift attributes gathered while unwrapping the default slot's
+        // paragraph onto the container. Container attributes win.
+        if (child.attributes && Object.keys(child.attributes).length) {
+          (container as any).attributes = {
+            ...child.attributes,
+            ...((container as any).attributes || {}),
+          }
+        }
         return child.children
       }
       child.data = {
@@ -169,6 +186,50 @@ export default (opts: RemarkMDCOptions = {}) => {
     })
 
     this.exit(token)
+
+    // Fold `::ul` / `::ol` / `::table` / `::blockquote` into their single
+    // same-tagged child so the wrapper's attributes land on the actual
+    // element instead of producing a redundant nested duplicate.
+    const folded = foldSingleTagChild(container)
+    if (folded) {
+      const parent = this.stack[this.stack.length - 1] as Container
+      const index = parent?.children?.indexOf(container as any)
+      if (parent && index !== undefined && index > -1) {
+        parent.children[index] = folded as any
+      }
+    }
+  }
+
+  function foldSingleTagChild(container: Container): Nodes | undefined {
+    const matchers: Record<string, (child: any) => boolean> = {
+      ul: child => child.type === 'list' && !child.ordered,
+      ol: child => child.type === 'list' && child.ordered,
+      table: child => child.type === 'table',
+      blockquote: child => child.type === 'blockquote',
+    }
+    const matches = matchers[(container as any).name]
+    if (!matches) {
+      return
+    }
+    // Keep the nested form when the wrapper carries frontmatter data so those
+    // attributes aren't silently lost (they're bound later on the component).
+    if (container.rawData) {
+      return
+    }
+    if (container.children.length !== 1) {
+      return
+    }
+    const child = container.children[0] as any
+    if (!matches(child)) {
+      return
+    }
+
+    // Merge the wrapper's attributes onto the child; outer attributes win.
+    const outer = (container as any).attributes || {}
+    if (Object.keys(outer).length || child.attributes) {
+      child.attributes = { ...(child.attributes || {}), ...outer }
+    }
+    return child as Nodes
   }
 
   function enterContainerSection(this: CompileContext, token: Token) {
@@ -295,11 +356,30 @@ export default (opts: RemarkMDCOptions = {}) => {
     (this.data as any).componentAttributes = attributes
     this.resume() // Drop EOLs
 
-    let stackTop = this.stack[this.stack.length - 1]
+    const block = this.stack[this.stack.length - 1]
+    let stackTop = block
 
     if (stackTop?.type !== 'textComponent' || stackTop?.name === 'span') {
       while (!stackTop?.position?.end && (stackTop as Container).children?.length > 0) {
         stackTop = (stackTop as Container).children[(stackTop as Container).children.length - 1]!
+      }
+    }
+
+    // When the attributes trail a plain text node they don't belong to any
+    // inline element — attach them to the nearest block element instead.
+    if (stackTop?.type === 'text') {
+      // Drop the separating whitespace before `{` from the text; the
+      // stringifier re-adds it when emitting the trailing attributes.
+      (stackTop as any).value = String((stackTop as any).value || '').replace(/[ \t]+$/, '')
+
+      stackTop = block
+      // A paragraph that is the content of a list item: the attributes belong
+      // to the list item, not the inner paragraph.
+      if (block?.type === 'paragraph') {
+        const parent = this.stack[this.stack.length - 2]
+        if (parent?.type === 'listItem') {
+          stackTop = parent
+        }
       }
     }
 

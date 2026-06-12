@@ -4,6 +4,7 @@ import { Codes } from './constants'
 import createAttributes from './factory-attributes'
 
 const attributes: any = { tokenize: tokenizeAttributes, partial: true }
+const blockAttributes: any = { tokenize: tokenizeBlockAttributes, partial: true }
 
 const validEvents = [
   /**
@@ -43,11 +44,38 @@ function tokenize(this: TokenizeContext, effects: Effects, ok: State, nok: State
      * Make sure syntax is used after valid tags
      */
     const event = self.events[self.events.length - 1]
-    if (markdownLineEnding(self.previous) || !event || !validEvents.includes(event[1].type)) {
+    if (markdownLineEnding(self.previous) || !event) {
       return nok(code)
     }
 
-    return effects.attempt(attributes, ok, nok)(code)
+    if (validEvents.includes(event[1].type)) {
+      return effects.attempt(attributes, ok, nok)(code)
+    }
+
+    /**
+     * Trailing block attributes: `{attr}` following plain text at the end of a
+     * block (paragraph, heading, list item, blockquote paragraph). Only accept
+     * when the attributes are the last thing on the line so that `{...}` in the
+     * middle of some text stays literal.
+     */
+    if (event[1].type === 'data') {
+      return effects.attempt(blockAttributes, ok, nok)(code)
+    }
+
+    return nok(code)
+  }
+}
+
+function tokenizeBlockAttributes(this: TokenizeContext, effects: Effects, ok: State, nok: State) {
+  // Always a `{`. Reuse the regular attributes factory, but only succeed when
+  // the closing `}` is immediately followed by the end of the line (or input).
+  return tokenizeAttributes(effects, afterAttributes, nok)
+
+  function afterAttributes(code: Code): State | undefined {
+    if (code === Codes.EOF || markdownLineEnding(code)) {
+      return ok(code)
+    }
+    return nok(code)
   }
 }
 

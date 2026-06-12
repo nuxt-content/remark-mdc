@@ -242,7 +242,7 @@ export default (opts: RemarkMDCOptions = {}) => {
 
     for (const attr of attrs) {
       const key = attr[0]
-      let value = attr[1]
+      let value
       if (attr[1] != null) {
         value = String(attr[1])
 
@@ -257,7 +257,7 @@ export default (opts: RemarkMDCOptions = {}) => {
           index = -1
 
           while (++index < value.length) {
-            (shortcut.test(value[index]) ? classes : classesFull).push(value[index])
+            (shortcut.test(value[index]!) ? classes : classesFull).push(value[index]!)
           }
 
           classesFull = classesFull.length ? quoted('class', classesFull.join(' ')) : ''

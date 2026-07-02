@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v3.11.1
+
+[compare changes](https://github.com/nuxt-content/remark-mdc/compare/v3.11.0...v3.11.1)
+
+### 🩹 Fixes
+
+- Reset chunk link between slots to preserve list structure ([#147](https://github.com/nuxt-content/remark-mdc/pull/147))
+
+### 🏡 Chore
+
+- Migrate to pnpm 11 and use allowBuilds ([#146](https://github.com/nuxt-content/remark-mdc/pull/146))
+- Upgrade deps ([#151](https://github.com/nuxt-content/remark-mdc/pull/151))
+
+### ❤️ Contributors
+
+- Farnabaz <farnabaz@gmail.com>
+
 ## v3.11.0
 
 [compare changes](https://github.com/nuxt-content/remark-mdc/compare/v3.10.0...v3.11.0)

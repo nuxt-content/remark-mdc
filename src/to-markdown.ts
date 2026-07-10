@@ -36,7 +36,12 @@ function compilePattern(pattern: Unsafe) {
 
 type NodeComponentContainerSection = Parents & { name: string }
 
-export default (opts: RemarkMDCOptions = {}) => {
+interface ComposedHandlers {
+  table?: (node: any, parent: any, state: State, info: Info) => string
+  listItem?: (node: any, parent: any, state: State, info: Info) => string
+}
+
+export default (opts: RemarkMDCOptions = {}, composed: ComposedHandlers = {}) => {
   const applyAutomaticUnwrap = (node: Container, _options: Exclude<RemarkMDCOptions['autoUnwrap'], boolean | undefined>) => {
     if (!CONTAINER_NODE_TYPES.has(node.type)) {
       // unwrap only applicable for container components
@@ -312,6 +317,37 @@ export default (opts: RemarkMDCOptions = {}) => {
     return node.children && node.children[0] && node.children[0].data && node.children[0].data.componentLabel
   }
 
+  // User-facing attributes on a plain block node (paragraph, heading, list, …),
+  // ignoring the `__order__` bookkeeping key used by `preserveOrder`.
+  function hasUserAttributes(node: any) {
+    const attrs = node?.attributes
+    return !!attrs && Object.keys(attrs).some(key => key !== '__order__')
+  }
+
+  // Trailing `{attr=…}` suffix for a block element, separated by a space.
+  function attributesSuffix(node: any, context: State) {
+    if (!hasUserAttributes(node)) {
+      return ''
+    }
+    const text = attributes(node, context)
+    return text ? ' ' + text : ''
+  }
+
+  // Re-wrap a folded `list` / `table` / `blockquote` carrying user attributes in
+  // its matching `::tag{attrs}` block component for serialization.
+  function wrapBlock(name: string, node: any, context: State) {
+    const inner = { ...node }
+    delete inner.attributes
+    const wrapper = {
+      type: 'containerComponent',
+      name,
+      attributes: node.attributes,
+      fmAttributes: {},
+      children: [inner],
+    }
+    return containerComponent(wrapper as any, null, context)
+  }
+
   return {
     compilePattern,
     unsafe: [
@@ -335,6 +371,47 @@ export default (opts: RemarkMDCOptions = {}) => {
       containerComponent,
       textComponent,
       componentContainerSection,
+      paragraph: (node: Parents, _: any, state: State, info: Info) => {
+        return defaultHandlers.paragraph(node as any, _, state, info) + attributesSuffix(node, state)
+      },
+      heading: (node: Parents, _: any, state: State, info: Info) => {
+        return defaultHandlers.heading(node as any, _, state, info) + attributesSuffix(node, state)
+      },
+      listItem: (node: Parents, parent: any, state: State, info: Info) => {
+        const handle = composed.listItem || defaultHandlers.listItem
+        return handle(node as any, parent, state, info) + attributesSuffix(node, state)
+      },
+      list: (node: Parents, parent: any, state: State, info: Info) => {
+        if (hasUserAttributes(node)) {
+          return wrapBlock((node as any).ordered ? 'ol' : 'ul', node, state)
+        }
+        return defaultHandlers.list(node as any, parent, state, info)
+      },
+      blockquote: (node: Parents, parent: any, state: State, info: Info) => {
+        if (hasUserAttributes(node)) {
+          // Multi-block blockquotes have no natural slot for attributes, so use
+          // the `::blockquote{attrs}` wrapper. Single-content blockquotes keep
+          // the natural `> text {attr}` form by moving the attrs to the child.
+          if (node.children.length > 1) {
+            return wrapBlock('blockquote', node, state)
+          }
+          const child = node.children[0] as any
+          const inner = { ...child, attributes: { ...(child?.attributes || {}), ...(node as any).attributes } }
+          const clone = { ...node, attributes: undefined, children: [inner] }
+          return defaultHandlers.blockquote(clone as any, parent, state, info)
+        }
+        return defaultHandlers.blockquote(node as any, parent, state, info)
+      },
+      ...(composed.table
+        ? {
+            table: (node: Parents, parent: any, state: State, info: Info) => {
+              if (hasUserAttributes(node)) {
+                return wrapBlock('table', node, state)
+              }
+              return composed.table!(node as any, parent, state, info)
+            },
+          }
+        : {}),
       image: (node: Parents, _: any, state: State, info: Info) => {
         return defaultHandlers.image(node as any, _, state, info) + attributes(node, state)
       },

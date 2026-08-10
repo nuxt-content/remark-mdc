@@ -57,6 +57,10 @@ export function parseFrontMatter(content: string, options?: YamlParseOptions) {
       const frontmatter = content.slice(4, idx - (hasCarriageReturn ? 1 : 0))
       if (frontmatter) {
         const document = parseDocument(frontmatter, options)
+        // toJSON() returns partial data for an invalid document
+        for (const error of document.errors) {
+          console.warn(`[remark-mdc] frontmatter: ${error.message}`)
+        }
         data = document.toJSON()
         if (options?.preserveOrder) {
           data.__order__ = extractOrdered(document.contents as YAMLNode)

@@ -1,4 +1,4 @@
-import { describe, test, expect } from 'vitest'
+import { describe, test, expect, vi } from 'vitest'
 import { parseDocument, type Node as YAMLNode } from 'yaml'
 import {
   stringifyYAML,
@@ -154,6 +154,16 @@ describe('frontmatter', () => {
       const result = parseFrontMatter(content)
       expect(result.data).toEqual({ title: 'Hello World', author: 'John Doe' })
       expect(result.content).toBe('\n')
+    })
+
+    test('should warn when frontmatter contains invalid yaml', () => {
+      const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
+      const content = '---\ntitle: Hello: World\nauthor: John Doe\n---\n'
+      const result = parseFrontMatter(content)
+      expect(warn).toHaveBeenCalledOnce()
+      expect(warn.mock.calls[0][0]).toContain('[remark-mdc] frontmatter:')
+      expect(result.data).toEqual({ title: { Hello: 'World', author: 'John Doe' } })
+      warn.mockRestore()
     })
 
     test('should handle content without frontmatter', () => {
